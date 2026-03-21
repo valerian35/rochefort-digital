@@ -38,7 +38,7 @@ export default function Blog() {
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
                 Blog & Ressources
               </p>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-charcoal-800 leading-tight mb-6">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-6">
                 Guides et conseils pour votre{' '}
                 <span className="text-sage-600">presence en ligne</span>
               </h1>
@@ -58,7 +58,7 @@ export default function Blog() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {categories.map((category) => (
                 <Link
                   key={category.id}
@@ -103,7 +103,7 @@ export default function Blog() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {allArticles.map((article) => (
                 <Link
                   key={article.id}

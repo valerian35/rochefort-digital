@@ -52,7 +52,7 @@ export default function Refonte() {
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
                 Refonte de site internet
               </p>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-charcoal-800 leading-tight mb-6">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-6">
                 Modernisez votre site web{' '}
                 <span className="text-sage-600">sans perdre votre SEO</span>
               </h1>
@@ -77,14 +77,14 @@ export default function Refonte() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Signes d'alerte</p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
                 Votre site a-t-il besoin d'une refonte ?
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {signs.map((sign) => (
-                <div key={sign.title} className="p-8 bg-cream-50 rounded-2xl border-l-4 border-sage-400 hover:shadow-lg transition-all duration-300">
+                <div key={sign.title} className="p-6 sm:p-8 bg-cream-50 rounded-2xl border-l-4 border-sage-400 hover:shadow-lg transition-all duration-300">
                   <div className="w-12 h-12 rounded-xl bg-sage-100 flex items-center justify-center mb-6">
                     <sign.icon className="w-6 h-6 text-sage-600" />
                   </div>
@@ -100,7 +100,7 @@ export default function Refonte() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-sage-200 font-medium tracking-widest uppercase text-sm mb-4">Avantages</p>
-              <h2 className="font-serif text-3xl sm:text-4xl mb-6">Ce qu'une refonte va vous apporter</h2>
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-6">Ce qu'une refonte va vous apporter</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -123,13 +123,13 @@ export default function Refonte() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Mon processus</p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">Une refonte maîtrisée en 6 étapes</h2>
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">Une refonte maîtrisée en 6 étapes</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {process.map((item) => (
-                <div key={item.step} className="p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300">
-                  <span className="text-sage-400 font-serif text-4xl">{item.step}</span>
+                <div key={item.step} className="p-6 sm:p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300">
+                  <span className="text-sage-400 font-serif text-3xl sm:text-4xl">{item.step}</span>
                   <h3 className="font-serif text-xl text-charcoal-800 mt-4 mb-3">{item.title}</h3>
                   <p className="text-charcoal-600 leading-relaxed">{item.description}</p>
                 </div>

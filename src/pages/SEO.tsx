@@ -117,7 +117,7 @@ export default function SEO() {
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
                 Consultant SEO Freelance
               </p>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-charcoal-800 leading-tight mb-6">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-6">
                 Boostez votre visibilite sur{' '}
                 <span className="text-sage-600">Google</span> et attirez plus de clients
               </h1>
@@ -157,14 +157,14 @@ export default function SEO() {
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
                 Mes prestations SEO
               </p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
                 Une approche complète du référencement
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {services.map((service) => (
-                <div key={service.title} className="p-8 bg-cream-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div key={service.title} className="p-6 sm:p-8 bg-cream-50 rounded-2xl hover:shadow-lg transition-all duration-300">
                   <div className="w-12 h-12 rounded-xl bg-sage-100 flex items-center justify-center mb-6">
                     <service.icon className="w-6 h-6 text-sage-600" />
                   </div>
@@ -183,7 +183,7 @@ export default function SEO() {
                 <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
                   Pourquoi le SEO ?
                 </p>
-                <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">
+                <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
                   Le référencement naturel, un investissement rentable
                 </h2>
                 <p className="text-charcoal-600 leading-relaxed mb-6">
@@ -224,12 +224,12 @@ export default function SEO() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Tarifs SEO</p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
                 Des formules adaptées à vos objectifs
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
               {pricing.map((plan) => (
                 <div
                   key={plan.name}

@@ -71,7 +71,7 @@ export default function Contact() {
       <main className="pt-32 pb-20 bg-gradient-to-br from-slate-600 to-slate-800">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto mb-16 text-center">
-            <h1 className="font-serif text-4xl sm:text-5xl text-white mb-6">
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6">
               Parlons de Votre Projet
             </h1>
             <p className="text-xl text-slate-200">
@@ -79,7 +79,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="max-w-2xl mx-auto bg-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-8 sm:p-12">
+          <div className="max-w-2xl mx-auto bg-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-4 sm:p-8 lg:p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="flex items-center gap-3 text-white mb-3 font-medium">

@@ -64,7 +64,7 @@ export default function Ecommerce() {
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
                 Creation site e-commerce
               </p>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-charcoal-800 leading-tight mb-6">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-6">
                 Lancez votre boutique en ligne{' '}
                 <span className="text-sage-600">et vendez 24h/24</span>
               </h1>
@@ -91,7 +91,7 @@ export default function Ecommerce() {
               <p className="text-sage-400 font-medium tracking-widest uppercase text-sm mb-4">Le marche e-commerce</p>
               <h2 className="font-serif text-2xl sm:text-3xl">Une opportunite a ne pas manquer</h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="font-serif text-3xl sm:text-4xl text-sage-400 mb-2">{stat.value}</div>
@@ -106,14 +106,14 @@ export default function Ecommerce() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Fonctionnalites</p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
                 Tout ce dont vous avez besoin pour vendre
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {features.map((feature) => (
-                <div key={feature.title} className="p-8 bg-cream-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+                <div key={feature.title} className="p-6 sm:p-8 bg-cream-50 rounded-2xl hover:shadow-lg transition-all duration-300">
                   <div className="w-12 h-12 rounded-xl bg-sage-100 flex items-center justify-center mb-6">
                     <feature.icon className="w-6 h-6 text-sage-600" />
                   </div>
@@ -127,13 +127,13 @@ export default function Ecommerce() {
 
         <section className="section-padding bg-cream-50">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div className="order-2 lg:order-1">
                 <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Site e-commerce performant" className="rounded-2xl shadow-xl" />
               </div>
               <div className="order-1 lg:order-2">
                 <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Pourquoi moi ?</p>
-                <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">
+                <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
                   Un e-commerce pensé pour convertir
                 </h2>
                 <p className="text-charcoal-600 leading-relaxed mb-6">
@@ -157,16 +157,16 @@ export default function Ecommerce() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Tarifs e-commerce</p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
                 Des solutions pour tous les budgets
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
               {pricing.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative p-8 rounded-2xl transition-all duration-300 ${
+                  className={`relative p-6 sm:p-8 rounded-2xl transition-all duration-300 ${
                     plan.popular ? 'bg-sage-600 text-white shadow-xl scale-105' : 'bg-white shadow-md hover:shadow-lg'
                   }`}
                 >

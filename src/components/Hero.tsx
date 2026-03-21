@@ -25,7 +25,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-8 opacity-0 animate-fade-in-up animate-delay-100 leading-tight">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 opacity-0 animate-fade-in-up animate-delay-100 leading-tight">
             Et si trouver des clients
             <br />
             <span className="italic text-white/90">etait aussi simple qu'un clic ?</span>

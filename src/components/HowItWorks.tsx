@@ -44,7 +44,7 @@ export default function HowItWorks() {
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mb-16">
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-charcoal-800 mb-6">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-charcoal-800 mb-6">
             <span className="text-charcoal-800">Comment</span>{' '}
             <span className="text-sage-500 italic">ça marche</span>
           </h2>
@@ -54,7 +54,7 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {steps.map((step, index) => (
             <div
               key={step.title}
@@ -69,7 +69,7 @@ export default function HowItWorks() {
                 )}
               </div>
 
-              <h3 className="font-serif text-3xl text-charcoal-800 mb-1">
+              <h3 className="font-serif text-xl sm:text-2xl text-charcoal-800 mb-1">
                 {step.title}
               </h3>
               <p className="text-sage-600 font-medium text-sm mb-4">

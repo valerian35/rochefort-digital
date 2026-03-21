@@ -15,7 +15,7 @@ export default function Philosophy() {
             Ma philosophie
           </p>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal-800 leading-tight mb-8">
+          <h2 className="font-serif text-xl sm:text-2xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-8">
             Je ne crée pas simplement des sites —{' '}
             <span className="text-charcoal-400 italic">
               je construis des outils de croissance qui génèrent des résultats durables.
@@ -35,7 +35,7 @@ export default function Philosophy() {
           </a>
         </div>
 
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-16 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {[
             {
               number: '01',

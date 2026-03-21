@@ -137,7 +137,7 @@ export default function CreationSite() {
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
                 Creation de site internet
               </p>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-charcoal-800 leading-tight mb-6">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-6">
                 Un site web professionnel qui{' '}
                 <span className="text-sage-600">convertit vos visiteurs</span> en clients
               </h1>
@@ -164,7 +164,7 @@ export default function CreationSite() {
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
                 Pourquoi me choisir
               </p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
                 Un site internet conçu pour performer
               </h2>
               <p className="text-charcoal-600 text-lg">
@@ -173,11 +173,11 @@ export default function CreationSite() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="p-8 bg-cream-50 rounded-2xl hover:shadow-lg transition-all duration-300"
+                  className="p-6 sm:p-8 bg-cream-50 rounded-2xl hover:shadow-lg transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl bg-sage-100 flex items-center justify-center mb-6">
                     <feature.icon className="w-6 h-6 text-sage-600" />
@@ -200,7 +200,7 @@ export default function CreationSite() {
               <p className="text-sage-400 font-medium tracking-widest uppercase text-sm mb-4">
                 Mon processus
               </p>
-              <h2 className="font-serif text-3xl sm:text-4xl mb-6">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-6">
                 Comment je crée votre site
               </h2>
               <p className="text-charcoal-300 text-lg">
@@ -208,10 +208,10 @@ export default function CreationSite() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {process.map((item, index) => (
                 <div key={item.step} className="relative">
-                  <div className="text-sage-400/30 font-serif text-7xl mb-4">
+                  <div className="text-sage-400/30 font-serif text-5xl sm:text-6xl mb-4">
                     {item.step}
                   </div>
                   <h3 className="font-serif text-xl mb-3">{item.title}</h3>
@@ -233,7 +233,7 @@ export default function CreationSite() {
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
                 Tarifs
               </p>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-800 mb-6">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
                 Des offres adaptées à vos besoins
               </h2>
               <p className="text-charcoal-600 text-lg">
