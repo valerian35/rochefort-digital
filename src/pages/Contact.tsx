@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -16,10 +17,10 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const services = [
-    { id: 'web', label: 'Sites Web' },
+    { id: 'web', label: 'Création de site web' },
     { id: 'seo', label: 'Référencement SEO' },
-    { id: 'dev', label: 'Développement Web' },
-    { id: 'support', label: 'Accompagnement de A à Z' },
+    { id: 'refonte', label: 'Refonte de site' },
+    { id: 'ecommerce', label: 'Site e-commerce' },
   ];
 
   const budgets = [
@@ -68,147 +69,177 @@ export default function Contact() {
     <div className="min-h-screen">
       <Header />
 
-      <main id="contact-form" className="pt-32 pb-20 bg-gradient-to-br from-slate-600 to-slate-800">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto mb-16 text-center">
-            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6">
-              Parlons de Votre Projet
-            </h1>
-            <p className="text-xl text-slate-200">
-              Chaque grand projet commence par une conversation
-            </p>
+      <main>
+        <section className="pt-32 pb-20 bg-gradient-to-b from-sage-50 to-cream-50 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-30">
+            <svg className="w-full h-full" viewBox="0 0 1000 600" preserveAspectRatio="none">
+              <path d="M0,300 Q250,200 500,300 T1000,300" fill="none" stroke="currentColor" strokeWidth="1" className="text-sage-300" />
+              <path d="M0,350 Q250,250 500,350 T1000,350" fill="none" stroke="currentColor" strokeWidth="1" className="text-sage-200" />
+            </svg>
           </div>
 
-          <div className="max-w-2xl mx-auto bg-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-4 sm:p-8 lg:p-12">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="flex items-center gap-3 text-white mb-3 font-medium">
-                  <User className="w-5 h-5" />
-                  Nom complet
-                  <span className="text-red-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  placeholder="John Doe"
-                  required
-                  className="w-full px-4 py-3 bg-slate-600/50 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors"
-                />
-              </div>
+          <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-700 transition-colors mb-8"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Retour a l'accueil
+            </Link>
 
-              <div>
-                <label className="flex items-center gap-3 text-white mb-3 font-medium">
-                  <Mail className="w-5 h-5" />
-                  Email
-                  <span className="text-red-400">*</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="john@example.com"
-                  required
-                  className="w-full px-4 py-3 bg-slate-600/50 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors"
-                />
-              </div>
+            <div className="max-w-4xl">
+              <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
+                Parlons de votre projet
+              </p>
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-6">
+                Transformons votre{' '}
+                <span className="text-sage-600">vision en réalité</span>
+              </h1>
+              <p className="text-charcoal-600 text-lg sm:text-xl leading-relaxed max-w-2xl">
+                Remplissez ce formulaire pour que nous commencions à discuter de votre projet. Je vous répondrai rapidement avec des propositions adaptées à vos besoins.
+              </p>
+            </div>
+          </div>
+        </section>
 
-              <div>
-                <label className="flex items-center gap-3 text-white mb-3 font-medium">
-                  <Phone className="w-5 h-5" />
-                  Téléphone
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="06 12 34 56 78"
-                  className="w-full px-4 py-3 bg-slate-600/50 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors"
-                />
-              </div>
-
-              <div>
-                <label className="flex items-center gap-3 text-white mb-4 font-medium">
-                  <Briefcase className="w-5 h-5" />
-                  Services qui vous intéressent
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {services.map(service => (
-                    <label key={service.id} className="flex items-center gap-3 p-3 bg-slate-600/30 border border-slate-500 rounded-lg cursor-pointer hover:bg-slate-600/50 transition-colors">
-                      <input
-                        type="checkbox"
-                        value={service.id}
-                        checked={formData.services.includes(service.id)}
-                        onChange={handleChange}
-                        className="w-4 h-4 rounded accent-blue-400"
-                      />
-                      <span className="text-white">{service.label}</span>
+        <section id="contact-form" className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label className="flex items-center gap-3 text-charcoal-800 mb-3 font-medium">
+                      <User className="w-5 h-5 text-sage-600" />
+                      Nom complet
+                      <span className="text-sage-600">*</span>
                     </label>
-                  ))}
+                    <input
+                      type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      placeholder="Jean Dupont"
+                      required
+                      className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="flex items-center gap-3 text-charcoal-800 mb-3 font-medium">
+                      <Mail className="w-5 h-5 text-sage-600" />
+                      Email
+                      <span className="text-sage-600">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="jean@exemple.com"
+                      required
+                      className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="flex items-center gap-3 text-white mb-3 font-medium">
-                  <DollarSign className="w-5 h-5" />
-                  Budget estimé
-                </label>
-                <select
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-slate-600/50 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors"
-                >
-                  <option value="">Sélectionnez un budget</option>
-                  {budgets.map(budget => (
-                    <option key={budget.id} value={budget.id}>{budget.label}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="flex items-center gap-3 text-white mb-3 font-medium">
-                  <MessageSquare className="w-5 h-5" />
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Décrivez votre projet..."
-                  rows={6}
-                  className="w-full px-4 py-3 bg-slate-600/50 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors resize-none"
-                />
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button
-                  type="submit"
-                  className="flex-1 px-8 py-4 bg-blue-400 hover:bg-blue-500 text-white font-medium rounded-full transition-colors flex items-center justify-center gap-2 shadow-lg"
-                >
-                  <span>Envoyer</span>
-                  <span className="text-lg">→</span>
-                </button>
-                <button
-                  type="button"
-                  className="flex-1 px-8 py-4 bg-slate-600/30 border border-slate-500 hover:bg-slate-600/50 text-white font-medium rounded-full transition-colors flex items-center justify-center gap-2"
-                >
-                  <Calendar className="w-5 h-5" />
-                  <span>Prendre rendez-vous</span>
-                </button>
-              </div>
-
-              {submitted && (
-                <div className="p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-100 text-center">
-                  Merci! Votre message a été envoyé avec succès.
+                <div>
+                  <label className="flex items-center gap-3 text-charcoal-800 mb-3 font-medium">
+                    <Phone className="w-5 h-5 text-sage-600" />
+                    Téléphone
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="06 12 34 56 78"
+                    className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors"
+                  />
                 </div>
-              )}
-            </form>
+
+                <div>
+                  <label className="flex items-center gap-3 text-charcoal-800 mb-4 font-medium">
+                    <Briefcase className="w-5 h-5 text-sage-600" />
+                    Services qui vous intéressent
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {services.map(service => (
+                      <label key={service.id} className="flex items-center gap-3 p-4 bg-cream-50 border border-sage-200 rounded-lg cursor-pointer hover:border-sage-300 hover:bg-sage-50/30 transition-colors group">
+                        <input
+                          type="checkbox"
+                          value={service.id}
+                          checked={formData.services.includes(service.id)}
+                          onChange={handleChange}
+                          className="w-5 h-5 rounded border-sage-300 text-sage-600 focus:ring-sage-500"
+                        />
+                        <span className="text-charcoal-700">{service.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="flex items-center gap-3 text-charcoal-800 mb-3 font-medium">
+                    <DollarSign className="w-5 h-5 text-sage-600" />
+                    Budget estimé
+                  </label>
+                  <select
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors"
+                  >
+                    <option value="">Sélectionnez un budget</option>
+                    {budgets.map(budget => (
+                      <option key={budget.id} value={budget.id}>{budget.label}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="flex items-center gap-3 text-charcoal-800 mb-3 font-medium">
+                    <MessageSquare className="w-5 h-5 text-sage-600" />
+                    Parlez-moi de votre projet
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Décrivez votre projet, vos objectifs et vos attentes..."
+                    rows={6}
+                    className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors resize-none"
+                  />
+                </div>
+
+                {submitted && (
+                  <div className="p-4 bg-green-50 border border-green-300 rounded-lg flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <div>
+                      <p className="text-green-900 font-medium">Message envoyé avec succès!</p>
+                      <p className="text-green-800 text-sm">Je vous recontacterai très rapidement.</p>
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <button
+                    type="submit"
+                    className="btn-primary flex-1 justify-center"
+                  >
+                    <span>Envoyer ma demande</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                  <Link
+                    to="/rendez-vous"
+                    className="btn-secondary flex-1 justify-center"
+                  >
+                    <span>Prendre rendez-vous</span>
+                  </Link>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
+        </section>
       </main>
 
       <Footer />
