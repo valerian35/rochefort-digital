@@ -35,7 +35,7 @@ const services = [
     subtitle: 'Boutique en ligne',
     description:
       'Lancez votre boutique en ligne avec un site performant, sécurisé et optimisé pour la conversion.',
-    image: 'https://i.ibb.co/yF4xnGXd/image.png',
+    image: 'https://i.ibb.co/B245dZ9c/Capture-d-cran-2026-03-22-110229.png',
     link: '/e-commerce',
   },
 ];

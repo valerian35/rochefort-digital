@@ -129,7 +129,7 @@ export default function Ecommerce() {
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div className="order-2 lg:order-1 relative inline-block">
-                <img src="https://i.ibb.co/SwfZXWP5/Capture-d-cran-2026-03-22-110216.png" alt="Site e-commerce performant" className="rounded-2xl shadow-xl max-w-xs w-full h-auto" />
+                <img src="https://i.ibb.co/B245dZ9c/Capture-d-cran-2026-03-22-110229.png" alt="Site e-commerce performant" className="rounded-2xl shadow-xl max-w-xs w-full h-auto" />
               </div>
               <div className="order-1 lg:order-2">
                 <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Pourquoi moi ?</p>
