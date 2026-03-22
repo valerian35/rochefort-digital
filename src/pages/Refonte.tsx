@@ -1,15 +1,29 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Check, RefreshCw, Zap, TrendingUp, Shield, Smartphone, Search, ArrowRight, AlertTriangle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CTA from '../components/CTA';
 
 export default function Refonte() {
+  const [searchParams] = useSearchParams();
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = 'Refonte Site Internet | Modernisation Web SEO';
   }, []);
+
+  useEffect(() => {
+    const scrollTo = searchParams.get('scroll');
+    if (scrollTo) {
+      setTimeout(() => {
+        const element = document.getElementById(scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [searchParams]);
 
   const signs = [
     { icon: AlertTriangle, title: 'Design démodé', description: 'Votre site a plus de 3 ans et ne reflète plus votre image de marque actuelle.' },

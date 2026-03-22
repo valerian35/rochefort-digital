@@ -1,15 +1,29 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Check, Code, Palette, Smartphone, Zap, Search, Shield, ArrowRight } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CTA from '../components/CTA';
 
 export default function CreationSite() {
+  const [searchParams] = useSearchParams();
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = 'Creation de Site Internet | Developpeur Web Freelance';
   }, []);
+
+  useEffect(() => {
+    const scrollTo = searchParams.get('scroll');
+    if (scrollTo) {
+      setTimeout(() => {
+        const element = document.getElementById(scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [searchParams]);
 
   const features = [
     {

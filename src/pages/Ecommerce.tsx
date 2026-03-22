@@ -1,15 +1,29 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Check, ShoppingCart, CreditCard, Package, BarChart3, Search, Shield, Truck, Users, ArrowRight } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CTA from '../components/CTA';
 
 export default function Ecommerce() {
+  const [searchParams] = useSearchParams();
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = 'Creation Site E-commerce | Boutique en Ligne SEO';
   }, []);
+
+  useEffect(() => {
+    const scrollTo = searchParams.get('scroll');
+    if (scrollTo) {
+      setTimeout(() => {
+        const element = document.getElementById(scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [searchParams]);
 
   const features = [
     { icon: ShoppingCart, title: 'Catalogue produits', description: 'Gestion intuitive de vos produits avec catégories, variantes, stocks et promotions.' },
