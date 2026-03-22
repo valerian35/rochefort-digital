@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const testimonials = [
   {
-    name: 'Marie L.',
-    role: 'Fondatrice, Studio Design',
+    name: 'Maxime V.',
+    role: 'Plombier',
     content:
-      'Après des années de site invisible sur Google, je me suis tournée vers ce freelance. En quelques mois, mon trafic a triplé et les demandes de devis affluent.',
+      'Après des années de site invisible sur Google, je me suis tourné vers ce freelance. En quelques mois, mon trafic a triplé et les demandes de devis affluent.',
   },
   {
     name: 'Thomas B.',
