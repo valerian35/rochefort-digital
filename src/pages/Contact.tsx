@@ -173,14 +173,12 @@ export default function Contact() {
                 <label className="flex items-center gap-3 text-white mb-3 font-medium">
                   <MessageSquare className="w-5 h-5" />
                   Message
-                  <span className="text-red-400">*</span>
                 </label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Décrivez votre projet..."
-                  required
                   rows={6}
                   className="w-full px-4 py-3 bg-slate-600/50 border border-slate-500 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors resize-none"
                 />
