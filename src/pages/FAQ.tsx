@@ -30,12 +30,6 @@ const faqItems: FAQItem[] = [
     category: 'Services'
   },
   {
-    id: 'seo-cost',
-    question: 'Quel est le coût d\'un site web optimisé SEO?',
-    answer: 'Le coût varie selon vos besoins. Une création de site web optimisé SEO commence généralement entre 2000€ et 5000€. Une optimisation SEO sur un site existant coûte entre 500€ et 2000€ par mois selon l\'envergure du projet. Je propose des devis personnalisés basés sur votre budget et vos objectifs.',
-    category: 'Tarifs'
-  },
-  {
     id: 'collaboration-process',
     question: 'Comment se déroule la collaboration?',
     answer: 'Le processus débute par une découverte de vos besoins et objectifs. Je réalise ensuite un audit de votre situation actuelle, puis je propose un plan d\'action détaillé. Pendant la mise en œuvre, nous maintenons une communication régulière avec des points de suivi hebdomadaires. Je fournis des rapports détaillés et des analyses pour suivre les progrès.',
@@ -79,7 +73,7 @@ const faqItems: FAQItem[] = [
   }
 ];
 
-const categories = ['SEO', 'Services', 'Tarifs', 'Collaboration', 'Création', 'Technique', 'Reporting'];
+const categories = ['SEO', 'Services', 'Collaboration', 'Création', 'Technique', 'Reporting'];
 
 export default function FAQ() {
   const [openItems, setOpenItems] = useState<string[]>([]);
