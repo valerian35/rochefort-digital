@@ -73,8 +73,8 @@ export default function Services() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/98 via-charcoal-900/70 to-sage-900/30 transition-all duration-500 group-hover:via-charcoal-900/80 group-hover:from-charcoal-950/99" />
-                <div className="absolute inset-0 bg-charcoal-950/10 group-hover:bg-charcoal-950/15 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/99 via-charcoal-950/85 to-charcoal-900/40 transition-all duration-500 group-hover:via-charcoal-950/90 group-hover:from-black/99" />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/25 transition-all duration-500" />
               </div>
 
               <div className="absolute inset-0 p-6 flex flex-col justify-between">
