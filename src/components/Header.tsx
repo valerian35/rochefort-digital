@@ -126,6 +126,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               to="/contact"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="inline-flex items-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 hover:shadow-lg"
             >
               <Send className="w-4 h-4" />
@@ -198,7 +199,10 @@ export default function Header() {
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 w-full"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               >
                 <Send className="w-4 h-4" />
                 Me contacter
