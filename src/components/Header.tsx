@@ -124,13 +124,13 @@ export default function Header() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="/#contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 hover:shadow-lg"
             >
               <Send className="w-4 h-4" />
               Me contacter
-            </a>
+            </Link>
             <a
               href="/#contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal-700/10 text-charcoal-700 font-medium rounded-full transition-all duration-300 hover:bg-charcoal-700/20"
@@ -195,14 +195,14 @@ export default function Header() {
 
               <div className="border-t border-charcoal-100 my-4" />
 
-              <a
-                href="/#contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 w-full"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Send className="w-4 h-4" />
                 Me contacter
-              </a>
+              </Link>
 
               <a
                 href="/#contact"
