@@ -30,8 +30,8 @@ export default function Header() {
   ];
 
   const navLinks = [
-    { href: isHomePage ? '#about' : '/#about', label: 'À propos', isRoute: false },
-    { href: isHomePage ? '#portfolio' : '/#portfolio', label: 'Réalisations', isRoute: false },
+    { href: '/#about', label: 'À propos', isRoute: false },
+    { href: '/#portfolio', label: 'Réalisations', isRoute: false },
     { href: '/blog', label: 'Blog', isRoute: true },
     { href: '/faq', label: 'FAQ', isRoute: true },
   ];
@@ -125,14 +125,14 @@ export default function Header() {
 
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href={isHomePage ? '#contact' : '/contact#contact-form'}
+              href="/#contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 hover:shadow-lg"
             >
               <Send className="w-4 h-4" />
               Me contacter
             </a>
             <a
-              href={isHomePage ? '#contact' : '/#contact'}
+              href="/#contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal-700/10 text-charcoal-700 font-medium rounded-full transition-all duration-300 hover:bg-charcoal-700/20"
             >
               Demander un devis
@@ -196,7 +196,7 @@ export default function Header() {
               <div className="border-t border-charcoal-100 my-4" />
 
               <a
-                href={isHomePage ? '#contact' : '/contact#contact-form'}
+                href="/#contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 w-full"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -205,7 +205,7 @@ export default function Header() {
               </a>
 
               <a
-                href={isHomePage ? '#contact' : '/#contact'}
+                href="/#contact"
                 className="btn-primary justify-center mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

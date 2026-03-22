@@ -68,7 +68,7 @@ const faqItems: FAQItem[] = [
   {
     id: 'analytics-reporting',
     question: 'Comment suivez-vous les performances de mon site?',
-    answer: 'Je configure Google Analytics, Google Search Console et des outils de suivi personnalisés. Je fournis des rapports mensuels détaillés incluant le trafic, les conversions, les classements SEO et le comportement des utilisateurs. Vous avez accès en continu au tableau de bord pour suivre les métriques en temps réel.',
+    answer: 'Je configure Google Analytics, Google Search Console et des outils de suivi personnalisés. Je fournis des rapports trimestriels détaillés incluant le trafic, les conversions, les classements SEO et le comportement des utilisateurs. Vous avez accès en continu au tableau de bord pour suivre les métriques en temps réel.',
     category: 'Reporting'
   }
 ];
