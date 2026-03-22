@@ -132,13 +132,22 @@ export default function Header() {
               <Send className="w-4 h-4" />
               Me contacter
             </Link>
-            <a
-              href="/#contact"
+            <Link
+              to={isHomePage ? '/#contact' : '/?scroll=contact'}
+              onClick={(e) => {
+                if (isHomePage) {
+                  e.preventDefault();
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
               className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal-700/10 text-charcoal-700 font-medium rounded-full transition-all duration-300 hover:bg-charcoal-700/20"
             >
               Demander un devis
               <span className="w-1.5 h-1.5 rounded-full bg-charcoal-700/60" />
-            </a>
+            </Link>
           </div>
 
           <button
@@ -208,13 +217,22 @@ export default function Header() {
                 Me contacter
               </Link>
 
-              <a
-                href="/#contact"
+              <Link
+                to={isHomePage ? '/#contact' : '/?scroll=contact'}
                 className="btn-primary justify-center mt-4"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setIsMobileMenuOpen(false);
+                  if (isHomePage) {
+                    e.preventDefault();
+                    const element = document.getElementById('contact');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
               >
                 Demander un devis
-              </a>
+              </Link>
             </div>
           </div>
         )}
