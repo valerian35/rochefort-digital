@@ -128,8 +128,11 @@ export default function Ecommerce() {
         <section className="section-padding bg-cream-50">
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="order-2 lg:order-1">
-                <img src="https://i.ibb.co/yF4xnGXd/image.png" alt="Site e-commerce performant" className="rounded-2xl shadow-xl w-full h-auto" />
+              <div className="order-2 lg:order-1 relative inline-block">
+                <img src="https://i.ibb.co/yF4xnGXd/image.png" alt="Site e-commerce performant" className="rounded-2xl shadow-xl max-w-md w-full h-auto" />
+                <div className="absolute inset-0 rounded-2xl bg-black/20 flex items-center justify-center">
+                  <h3 className="font-serif text-4xl text-white font-bold drop-shadow-lg">E-commerce</h3>
+                </div>
               </div>
               <div className="order-1 lg:order-2">
                 <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Pourquoi moi ?</p>
