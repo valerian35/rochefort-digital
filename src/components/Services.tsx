@@ -8,7 +8,7 @@ const services = [
     subtitle: 'Sur Mesure',
     description:
       'Sites vitrines, applications web ou plateformes personnalisées. Un développement adapté à vos objectifs business.',
-    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://i.ibb.co/1tv6T5sm/Capture-d-cran-2026-03-22-171026.png',
     link: '/creation-site-internet',
   },
   {
