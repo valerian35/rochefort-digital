@@ -68,7 +68,7 @@ export default function Contact() {
     <div className="min-h-screen">
       <Header />
 
-      <main className="pt-32 pb-20 bg-gradient-to-br from-slate-600 to-slate-800">
+      <main id="contact-form" className="pt-32 pb-20 bg-gradient-to-br from-slate-600 to-slate-800">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto mb-16 text-center">
             <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6">
