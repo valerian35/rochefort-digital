@@ -29,11 +29,23 @@ export default function Header() {
     { to: '/e-commerce', label: 'E-commerce' },
   ];
 
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchorId: string) => {
+    e.preventDefault();
+    if (isHomePage) {
+      const element = document.getElementById(anchorId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.location.href = `/?scroll=${anchorId}`;
+    }
+  };
+
   const navLinks = [
-    { href: '/#about', label: 'À propos', isRoute: false },
-    { href: '/#portfolio', label: 'Réalisations', isRoute: false },
+    { href: '/#about', label: 'À propos', anchorId: 'about' },
+    { href: '/#portfolio', label: 'Réalisations', anchorId: 'portfolio' },
     { href: '/blog', label: 'Blog', isRoute: true },
-    { href: '/faq', label: 'FAQ', isRoute: false },
+    { href: '/faq', label: 'FAQ', anchorId: null },
   ];
 
   const headerBg = isScrolled || !isHomePage;
@@ -107,10 +119,11 @@ export default function Header() {
                 >
                   {link.label}
                 </Link>
-              ) : (
+              ) : link.anchorId ? (
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleAnchorClick(e, link.anchorId)}
                   className={`font-medium tracking-wide uppercase text-sm transition-colors duration-300 ${
                     headerBg
                       ? 'text-charcoal-600 hover:text-sage-600'
@@ -119,6 +132,18 @@ export default function Header() {
                 >
                   {link.label}
                 </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`font-medium tracking-wide uppercase text-sm transition-colors duration-300 ${
+                    headerBg
+                      ? 'text-charcoal-600 hover:text-sage-600'
+                      : 'text-white/90 hover:text-white'
+                  }`}
+                >
+                  {link.label}
+                </Link>
               )
             )}
           </div>
@@ -132,22 +157,14 @@ export default function Header() {
               <Send className="w-4 h-4" />
               Me contacter
             </Link>
-            <Link
-              to={isHomePage ? '/#contact' : '/?scroll=contact'}
-              onClick={(e) => {
-                if (isHomePage) {
-                  e.preventDefault();
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }
-              }}
+            <a
+              href={isHomePage ? '/#contact' : '/?scroll=contact'}
+              onClick={(e) => handleAnchorClick(e, 'contact')}
               className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal-700/10 text-charcoal-700 font-medium rounded-full transition-all duration-300 hover:bg-charcoal-700/20"
             >
               Demander un devis
               <span className="w-1.5 h-1.5 rounded-full bg-charcoal-700/60" />
-            </Link>
+            </a>
           </div>
 
           <button
@@ -191,15 +208,27 @@ export default function Header() {
                   >
                     {link.label}
                   </Link>
-                ) : (
+                ) : link.anchorId ? (
                   <a
                     key={link.href}
                     href={link.href}
+                    onClick={(e) => {
+                      handleAnchorClick(e, link.anchorId);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="text-charcoal-700 font-medium py-2 px-2 hover:text-sage-600 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
                     className="text-charcoal-700 font-medium py-2 px-2 hover:text-sage-600 transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 )
               )}
 
@@ -217,22 +246,16 @@ export default function Header() {
                 Me contacter
               </Link>
 
-              <Link
-                to={isHomePage ? '/#contact' : '/?scroll=contact'}
-                className="btn-primary justify-center mt-4"
+              <a
+                href={isHomePage ? '/#contact' : '/?scroll=contact'}
                 onClick={(e) => {
+                  handleAnchorClick(e, 'contact');
                   setIsMobileMenuOpen(false);
-                  if (isHomePage) {
-                    e.preventDefault();
-                    const element = document.getElementById('contact');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }
                 }}
+                className="btn-primary justify-center mt-4"
               >
                 Demander un devis
-              </Link>
+              </a>
             </div>
           </div>
         )}
