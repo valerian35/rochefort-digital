@@ -79,10 +79,10 @@ export default function Services() {
 
               <div className="absolute inset-0 p-6 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-white leading-tight transition-all duration-300 group-hover:text-sage-200">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-white leading-tight transition-all duration-300 group-hover:text-white">
                     {service.title}
                     <br />
-                    <span className="text-white/80 group-hover:text-sage-100">{service.subtitle}</span>
+                    <span className="text-white/80 group-hover:text-white/80">{service.subtitle}</span>
                   </h3>
                 </div>
 
