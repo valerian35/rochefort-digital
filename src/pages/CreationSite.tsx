@@ -158,26 +158,31 @@ export default function CreationSite() {
           </div>
         </section>
 
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-cream-50">
           <div className="container-custom">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
-                Pourquoi me choisir
-              </p>
-              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
-                Un site internet conçu pour performer
-              </h2>
-              <p className="text-charcoal-600 text-lg">
-                Chaque site que je crée est pensé pour atteindre vos objectifs business :
-                visibilité, crédibilité et conversion.
-              </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16">
+              <div>
+                <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
+                  Pourquoi me choisir
+                </p>
+                <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
+                  Un site internet conçu pour performer
+                </h2>
+                <p className="text-charcoal-600 text-lg leading-relaxed mb-8">
+                  Chaque site que je crée est pensé pour atteindre vos objectifs business :
+                  visibilité, crédibilité et conversion.
+                </p>
+              </div>
+              <div>
+                <img src="https://ibb.co/6Rn4vxF8" alt="Site web performant" className="rounded-2xl shadow-xl" />
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="p-6 sm:p-8 bg-cream-50 rounded-2xl hover:shadow-lg transition-all duration-300"
+                  className="p-6 sm:p-8 bg-white rounded-2xl hover:shadow-lg transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl bg-sage-100 flex items-center justify-center mb-6">
                     <feature.icon className="w-6 h-6 text-sage-600" />
