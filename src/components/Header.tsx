@@ -33,7 +33,7 @@ export default function Header() {
     { href: '/#about', label: 'À propos', isRoute: false },
     { href: '/#portfolio', label: 'Réalisations', isRoute: false },
     { href: '/blog', label: 'Blog', isRoute: true },
-    { href: '/faq', label: 'FAQ', isRoute: true },
+    { href: '/faq', label: 'FAQ', isRoute: false },
   ];
 
   const headerBg = isScrolled || !isHomePage;

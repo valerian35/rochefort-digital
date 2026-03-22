@@ -29,7 +29,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="contact" className="bg-charcoal-900 text-white">
+    <footer className="bg-charcoal-900 text-white">
       <div className="section-padding">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
@@ -159,16 +159,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-charcoal-800">
+      <div id="contact" className="border-t border-charcoal-800">
         <div className="container-custom px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col items-center gap-8 mb-6">
-            <Link
-              to="/contact"
+            <a
+              href="/#contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-sage-500 text-white rounded-full hover:bg-sage-600 transition-colors font-medium"
             >
               <Send className="w-4 h-4" />
               Me contacter
-            </Link>
+            </a>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 w-full">
               <p className="text-charcoal-400 text-sm">
                 {currentYear} Rochefort-digital. Tous droits réservés.
