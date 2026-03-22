@@ -42,7 +42,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section-padding bg-white">
+    <section id="services" className="section-padding bg-white pt-32">
       <div className="container-custom">
         <div className="text-center mb-16">
           <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
