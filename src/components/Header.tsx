@@ -48,7 +48,7 @@ export default function Header() {
     >
       <nav className="container-custom px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-2 group">
             <span className={`w-2 h-2 rounded-full transition-colors duration-300 ${
               headerBg ? 'bg-sage-500' : 'bg-white'
             } group-hover:bg-sage-400`} />
