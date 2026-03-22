@@ -174,7 +174,7 @@ export default function CreationSite() {
                 </p>
               </div>
               <div>
-                <img src="https://ibb.co/6Rn4vxF8" alt="Site web performant" className="rounded-2xl shadow-xl" />
+                <img src="https://i.ibb.co/1tv6T5sm/Capture-d-cran-2026-03-22-171026.png" alt="Site web performant" className="rounded-2xl shadow-xl" />
               </div>
             </div>
 
