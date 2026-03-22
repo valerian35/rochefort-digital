@@ -49,8 +49,8 @@ export default function Stories() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img
-                  src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Collaboration equipe"
+                  src="https://i.ibb.co/6Rn4vxF8/Chat-GPT-Image-22-mars-2026-10-37-54.png"
+                  alt="E-commerce boutique en ligne"
                   className="w-full h-64 object-cover rounded-2xl"
                   loading="lazy"
                 />
