@@ -28,10 +28,6 @@ export default function CTA() {
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-white/80 font-medium tracking-widest uppercase text-sm mb-6">
-            Offre limitee
-          </p>
-
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-tight">
             Prendre un rendez-vous
           </h2>
