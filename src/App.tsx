@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FloatingEmailButton from './components/FloatingEmailButton';
 import Home from './pages/Home';
 import CreationSite from './pages/CreationSite';
 import SEO from './pages/SEO';
@@ -17,6 +18,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen">
+        <FloatingEmailButton />
         <Routes>
           <Route
             path="/"
