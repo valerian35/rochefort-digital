@@ -137,20 +137,20 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="mailto:contact@dev-seo.fr"
+                    href="mailto:contact@rochefort-digital.fr"
                     className="flex items-center gap-3 text-charcoal-300 hover:text-sage-400 transition-colors"
                   >
                     <Mail className="w-5 h-5 text-sage-400" />
-                    contact@dev-seo.fr
+                    contact@rochefort-digital.fr
                   </a>
                 </li>
                 <li>
                   <a
-                    href="tel:+33600000000"
+                    href="tel:+33698322073"
                     className="flex items-center gap-3 text-charcoal-300 hover:text-sage-400 transition-colors"
                   >
                     <Phone className="w-5 h-5 text-sage-400" />
-                    06 00 00 00 00
+                    06 98 32 20 73
                   </a>
                 </li>
               </ul>
