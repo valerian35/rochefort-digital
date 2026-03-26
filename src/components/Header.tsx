@@ -45,7 +45,7 @@ export default function Header() {
     { href: '/#about', label: 'À propos', anchorId: 'about' },
     { href: '/#portfolio', label: 'Réalisations', anchorId: 'portfolio' },
     { href: '/blog', label: 'Blog', isRoute: true },
-    { href: '/faq', label: 'FAQ', anchorId: null },
+    { href: '/faq', label: 'FAQ', isRoute: true, scrollTop: true },
   ];
 
   const headerBg = isScrolled || !isHomePage;
@@ -111,6 +111,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   to={link.href}
+                  onClick={() => link.scrollTop && window.scrollTo({ top: 0, behavior: 'smooth' })}
                   className={`font-medium tracking-wide uppercase text-sm transition-colors duration-300 ${
                     headerBg
                       ? 'text-charcoal-600 hover:text-sage-600'
@@ -204,7 +205,10 @@ export default function Header() {
                     key={link.href}
                     to={link.href}
                     className="text-charcoal-700 font-medium py-2 px-2 hover:text-sage-600 transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      if (link.scrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
                   >
                     {link.label}
                   </Link>
