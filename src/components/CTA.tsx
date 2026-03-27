@@ -94,7 +94,6 @@ export default function CTA() {
                     placeholder="Décrivez votre projet"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    required
                     className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50 resize-none h-32"
                   />
                 </div>
