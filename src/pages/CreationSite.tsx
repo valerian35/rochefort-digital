@@ -91,7 +91,7 @@ export default function CreationSite() {
   const pricing = [
     {
       name: 'Site Premium',
-      price: 'À partir de 3 000',
+      price: 'À partir de 1 000',
       description: 'Pour une présence en ligne complète',
       features: [
         'Design sur mesure',
@@ -109,7 +109,7 @@ export default function CreationSite() {
       price: 'Sur devis',
       description: 'Projets complexes et spécifiques',
       features: [
-        'Fonctionnalités custom',
+        'Inclus l\'ensemble des prestations de l\'offre premium, avec des ajustements personnalisés selon vos besoins',
         'Intégrations API',
         'Espace client/admin',
         'Accompagnement complet',
@@ -277,7 +277,7 @@ export default function CreationSite() {
                     {plan.description}
                   </p>
                   <div className={`text-3xl font-serif mb-6 ${plan.popular ? 'text-white' : 'text-charcoal-800'}`}>
-                    {plan.price}<span className="text-lg">EUR</span>
+                    {plan.price}{plan.popular && <span className="text-lg">EUR</span>}
                   </div>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature) => (
