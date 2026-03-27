@@ -73,9 +73,9 @@ export default function SEO() {
 
   const pricing = [
     {
-      name: 'Audit SEO',
+      name: 'Accompagnement SEO',
       price: 'A partir de 500',
-      description: 'Accompagnement SEO Suivi mensuel pour des résultats durables',
+      description: 'Suivi mensuel pour des résultats durables',
       features: [
         'Analyse technique complete',
         'Audit du contenu',
