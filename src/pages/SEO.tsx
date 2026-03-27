@@ -140,10 +140,10 @@ export default function SEO() {
                 pour générer un trafic qualifié et durable.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" className="btn-primary">
+                <Link to="/rendez-vous" className="btn-primary">
                   Prendre un rendez-vous
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <a href="#tarifs" className="btn-secondary">
                   Voir les prestations
                 </a>
