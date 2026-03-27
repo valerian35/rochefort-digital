@@ -141,7 +141,7 @@ export default function SEO() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#contact" className="btn-primary">
-                  Demander un audit gratuit
+                  Prendre un rendez-vous
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a href="#tarifs" className="btn-secondary">

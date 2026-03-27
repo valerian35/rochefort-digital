@@ -37,10 +37,10 @@ export default function Stories() {
             </p>
 
             <Link
-              to="/audit-gratuit"
+              to="/rendez-vous"
               className="btn-primary"
             >
-              Audit gratuit
+              Prendre un rendez-vous
               <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
             </Link>
           </div>
