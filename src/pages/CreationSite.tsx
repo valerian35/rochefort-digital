@@ -160,10 +160,10 @@ export default function CreationSite() {
                 Un investissement stratégique pour développer votre activité en ligne.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" className="btn-primary">
-                  Demander un devis gratuit
+                <Link to="/rendez-vous" className="btn-primary">
+                  Prendre un rendez-vous
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <a href="#tarifs" className="btn-secondary">
                   Voir les tarifs
                 </a>
