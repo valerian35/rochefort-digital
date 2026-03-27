@@ -75,7 +75,7 @@ export default function SEO() {
     {
       name: 'Audit SEO',
       price: 'A partir de 500',
-      description: 'Diagnostic complet de votre site',
+      description: 'Accompagnement SEO Suivi mensuel pour des résultats durables',
       features: [
         'Analyse technique complete',
         'Audit du contenu',
