@@ -27,7 +27,7 @@ export default function Philosophy() {
           </p>
 
           <a
-            href="/seo-referencement"
+            href="/rendez-vous"
             className="btn-primary"
           >
             Prendre un rendez-vous
