@@ -273,7 +273,7 @@ export default function SEO() {
                     {plan.price}<span className="text-lg">EUR</span>
                   </div>
                   {plan.monthly && <p className={`text-sm mb-6 ${plan.popular ? 'text-sage-200' : 'text-charcoal-500'}`}>par mois</p>}
-                  {plan.oneTime && <p className={`text-sm mb-6 ${plan.popular ? 'text-sage-200' : 'text-charcoal-500'}`}>prestation mensuel</p>}
+                  {plan.oneTime && <p className={`text-sm mb-6 ${plan.popular ? 'text-sage-200' : 'text-charcoal-500'}`}>mensuel</p>}
                   {!plan.monthly && !plan.oneTime && <div className="mb-6" />}
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature) => (
