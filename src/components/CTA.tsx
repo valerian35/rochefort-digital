@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
 
 export default function CTA() {
-  const [email, setEmail] = useState('');
-  const [website, setWebsite] = useState('');
+  const [phone, setPhone] = useState('');
+  const [timeline, setTimeline] = useState('');
+  const [description, setDescription] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -62,44 +63,60 @@ export default function CTA() {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
-              <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                <input
-                  type="email"
-                  placeholder="Votre email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 px-5 py-4 rounded-full bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
+            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
+              <div className="space-y-4">
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Votre numéro de téléphone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  />
+                </div>
+                <div>
+                  <select
+                    value={timeline}
+                    onChange={(e) => setTimeline(e.target.value)}
+                    required
+                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  >
+                    <option value="">Sélectionnez votre timeline souhaitée</option>
+                    <option value="urgent">Urgent (dans les 2 semaines)</option>
+                    <option value="soon">Bientôt (1-2 mois)</option>
+                    <option value="flexible">Flexible (3+ mois)</option>
+                    <option value="exploration">En exploration (pas de deadline)</option>
+                  </select>
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Décrivez votre projet"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    required
+                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50 resize-none h-32"
+                  />
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="url"
-                  placeholder="URL de votre site (optionnel)"
-                  value={website}
-                  onChange={(e) => setWebsite(e.target.value)}
-                  className="flex-1 px-5 py-4 rounded-full bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="px-8 py-4 bg-charcoal-900 text-white font-semibold rounded-full transition-all duration-300 hover:bg-charcoal-800 hover:shadow-xl disabled:opacity-70 flex items-center justify-center gap-2"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      Envoi...
-                    </>
-                  ) : (
-                    <>
-                      Prendre rendez-vous
-                      <ArrowRight className="w-5 h-5" />
-                    </>
-                  )}
-                </button>
-              </div>
-              <p className="text-white/60 text-sm mt-4">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full mt-6 px-8 py-4 bg-charcoal-900 text-white font-semibold rounded-full transition-all duration-300 hover:bg-charcoal-800 hover:shadow-xl disabled:opacity-70 flex items-center justify-center gap-2"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Envoi...
+                  </>
+                ) : (
+                  <>
+                    Prendre rendez-vous
+                    <ArrowRight className="w-5 h-5" />
+                  </>
+                )}
+              </button>
+              <p className="text-white/60 text-sm mt-4 text-center">
                 Sans engagement. Réponse sous 24h.
               </p>
             </form>
