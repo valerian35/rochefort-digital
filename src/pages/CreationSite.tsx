@@ -97,7 +97,7 @@ export default function CreationSite() {
         'Design sur mesure',
         '10+ pages',
         'Blog intégré',
-        'Optimisation SEO avancée',
+        'Responsive mobile',
         'Animations modernes',
         'Formation à la gestion',
         'Optimisation SEO sur devis',
@@ -255,13 +255,13 @@ export default function CreationSite() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
               {pricing.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative p-8 rounded-2xl transition-all duration-300 ${
+                  className={`relative p-8 rounded-2xl transition-all duration-300 w-full max-w-sm ${
                     plan.popular
-                      ? 'bg-sage-600 text-white shadow-xl scale-105'
+                      ? 'bg-sage-600 text-white shadow-xl'
                       : 'bg-white shadow-md hover:shadow-lg'
                   }`}
                 >
