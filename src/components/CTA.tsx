@@ -47,10 +47,35 @@ export default function CTA() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('https://formspree.io/f/xojpvolj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sector,
+          services: services.join(', '),
+          timeline,
+          description,
+        }),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (response.ok) {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setSector('');
+          setServices([]);
+          setTimeline('');
+          setDescription('');
+          setIsSubmitted(false);
+        }, 2000);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
