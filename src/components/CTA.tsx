@@ -5,6 +5,7 @@ export default function CTA() {
   const [sector, setSector] = useState('');
   const [timeline, setTimeline] = useState('');
   const [description, setDescription] = useState('');
+  const [phone, setPhone] = useState('');
   const [services, setServices] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -57,6 +58,7 @@ export default function CTA() {
           sector,
           services: services.join(', '),
           timeline,
+          phone,
           description,
         }),
       });
@@ -67,6 +69,7 @@ export default function CTA() {
           setSector('');
           setServices([]);
           setTimeline('');
+          setPhone('');
           setDescription('');
           setIsSubmitted(false);
         }, 2000);
@@ -169,6 +172,15 @@ export default function CTA() {
                     <option value="flexible">Flexible (3+ mois)</option>
                     <option value="exploration">En exploration (pas de deadline)</option>
                   </select>
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Votre numéro de téléphone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  />
                 </div>
                 <div>
                   <textarea
