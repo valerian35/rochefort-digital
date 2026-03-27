@@ -295,16 +295,16 @@ export default function CreationSite() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="#contact"
+                  <Link
+                    to="/rendez-vous"
                     className={`block text-center py-3 rounded-full font-medium transition-all ${
                       plan.popular
                         ? 'bg-white text-sage-600 hover:bg-cream-100'
                         : 'bg-sage-500 text-white hover:bg-sage-600'
                     }`}
                   >
-                    Demander un devis
-                  </a>
+                    Prendre un rendez-vous
+                  </Link>
                 </div>
               ))}
             </div>
