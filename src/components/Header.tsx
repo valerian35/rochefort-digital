@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Send } from 'lucide-react';
+import { Menu, X, ChevronDown, Send, Phone } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -150,19 +150,14 @@ export default function Header() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="mailto:contact@rochefort-digital.fr"
+            <Link
+              to="/contact"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="inline-flex items-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 hover:shadow-lg"
             >
               <Send className="w-4 h-4" />
-              contact@rochefort-digital.fr
-            </a>
-            <a
-              href="tel:+33698322073"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 hover:shadow-lg"
-            >
-              06 98 32 20 73
-            </a>
+              Me contacter
+            </Link>
             <a
               href={isHomePage ? '/#contact' : '/?scroll=contact'}
               onClick={(e) => handleAnchorClick(e, 'contact')}
@@ -243,21 +238,17 @@ export default function Header() {
 
               <div className="border-t border-charcoal-100 my-4" />
 
-              <a
-                href="mailto:contact@rochefort-digital.fr"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 w-full"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               >
                 <Send className="w-4 h-4" />
-                contact@rochefort-digital.fr
-              </a>
-
-              <a
-                href="tel:+33698322073"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 w-full"
-              >
-                <Phone className="w-4 h-4" />
-                06 98 32 20 73
-              </a>
+                Me contacter
+              </Link>
 
               <a
                 href={isHomePage ? '/#contact' : '/?scroll=contact'}
