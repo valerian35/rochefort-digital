@@ -9,6 +9,25 @@ export default function CTA() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const sectorOptions = [
+    'Artisanat',
+    'Commerce',
+    'Conseil',
+    'E-commerce',
+    'Éducation',
+    'Événementiel',
+    'Hôtellerie & Restauration',
+    'Immobilier',
+    'Industrie',
+    'IT & Technologie',
+    'Marketing & Agence',
+    'Santé & Bien-être',
+    'Services',
+    'Transport & Logistique',
+    'Tourisme',
+    'Autre',
+  ];
+
   const serviceOptions = [
     { id: 'creation', label: 'Création Site Internet' },
     { id: 'seo', label: 'Référencement (SEO)' },
@@ -82,14 +101,19 @@ export default function CTA() {
             <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
               <div className="space-y-4">
                 <div>
-                  <input
-                    type="text"
-                    placeholder="Votre secteur d'activité"
+                  <select
                     value={sector}
                     onChange={(e) => setSector(e.target.value)}
                     required
                     className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
-                  />
+                  >
+                    <option value="">Sélectionnez votre secteur d'activité</option>
+                    {sectorOptions.map((sector) => (
+                      <option key={sector} value={sector}>
+                        {sector}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <label className="block text-white mb-3 text-sm font-medium">Services qui vous intéressent</label>
