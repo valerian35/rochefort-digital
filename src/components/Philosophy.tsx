@@ -1,5 +1,12 @@
 import { Sparkles, ArrowRight } from 'lucide-react';
 
+const scrollToRendezVous = () => {
+  const element = document.getElementById('rendez-vous-form');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 export default function Philosophy() {
   return (
     <section id="about" className="section-padding bg-cream-50">
@@ -26,13 +33,13 @@ export default function Philosophy() {
             En combinant expertise technique et stratégie SEO, je conçois des solutions web qui ne se contentent pas d'exister, mais qui attirent, engagent et convertissent vos visiteurs en clients.
           </p>
 
-          <a
-            href="/rendez-vous"
-            className="btn-primary"
+          <button
+            onClick={scrollToRendezVous}
+            className="btn-primary cursor-pointer"
           >
             Prendre un rendez-vous
             <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
-          </a>
+          </button>
         </div>
 
         <div className="mt-16 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

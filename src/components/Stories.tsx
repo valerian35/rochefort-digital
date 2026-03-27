@@ -1,6 +1,13 @@
 import { ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const scrollToRendezVous = () => {
+  const element = document.getElementById('rendez-vous-form');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 const testimonials = [
   {
     name: 'Maxime V.',
@@ -36,13 +43,13 @@ export default function Stories() {
               Après des années de site web invisible et de stratégies inefficaces, mes clients ont fait le choix d'un accompagnement qui allie technique et stratégie. À travers des actions concrètes et mesurées, ils ont retrouvé une visibilité durable et une croissance réelle.
             </p>
 
-            <Link
-              to="/rendez-vous"
-              className="btn-primary"
+            <button
+              onClick={scrollToRendezVous}
+              className="btn-primary cursor-pointer"
             >
               Prendre un rendez-vous
               <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
-            </Link>
+            </button>
           </div>
 
           <div className="relative">

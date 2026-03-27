@@ -1,5 +1,12 @@
 import { ArrowRight } from 'lucide-react';
 
+const scrollToRendezVous = () => {
+  const element = document.getElementById('rendez-vous-form');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -38,13 +45,13 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in-up animate-delay-300">
-            <a
-              href="/rendez-vous"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-sage-700 font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
+            <button
+              onClick={scrollToRendezVous}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-sage-700 font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer"
             >
               Prendre un rendez-vous
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </a>
+            </button>
             <a
               href="#services"
               className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/50 text-white font-medium rounded-full transition-all duration-300 hover:bg-white/10 hover:border-white"

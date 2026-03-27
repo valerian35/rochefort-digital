@@ -82,7 +82,7 @@ export default function CTA() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-br from-sage-500 via-sage-400 to-sage-300 relative overflow-hidden">
+    <section id="rendez-vous-form" className="section-padding bg-gradient-to-br from-sage-500 via-sage-400 to-sage-300 relative overflow-hidden">
       <div className="decorative-curves text-white">
         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
           <path d="M0,300 Q250,100 500,300 T1000,200" />
