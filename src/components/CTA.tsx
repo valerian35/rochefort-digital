@@ -2,11 +2,27 @@ import { useState } from 'react';
 import { ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
 
 export default function CTA() {
-  const [phone, setPhone] = useState('');
+  const [sector, setSector] = useState('');
   const [timeline, setTimeline] = useState('');
   const [description, setDescription] = useState('');
+  const [services, setServices] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const serviceOptions = [
+    { id: 'creation', label: 'Création Site Internet' },
+    { id: 'seo', label: 'Référencement (SEO)' },
+    { id: 'refonte', label: 'Refonte Site Web' },
+    { id: 'ecommerce', label: 'E-commerce' },
+  ];
+
+  const toggleService = (serviceId: string) => {
+    setServices(prev =>
+      prev.includes(serviceId)
+        ? prev.filter(id => id !== serviceId)
+        : [...prev, serviceId]
+    );
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,13 +83,29 @@ export default function CTA() {
               <div className="space-y-4">
                 <div>
                   <input
-                    type="tel"
-                    placeholder="Votre numéro de téléphone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    type="text"
+                    placeholder="Votre secteur d'activité"
+                    value={sector}
+                    onChange={(e) => setSector(e.target.value)}
                     required
                     className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
                   />
+                </div>
+                <div>
+                  <label className="block text-white mb-3 text-sm font-medium">Services qui vous intéressent</label>
+                  <div className="space-y-3">
+                    {serviceOptions.map((service) => (
+                      <label key={service.id} className="flex items-center gap-3 cursor-pointer group">
+                        <input
+                          type="checkbox"
+                          checked={services.includes(service.id)}
+                          onChange={() => toggleService(service.id)}
+                          className="w-5 h-5 rounded-lg bg-white accent-sage-500 cursor-pointer"
+                        />
+                        <span className="text-white group-hover:text-white/80 transition-colors">{service.label}</span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
                 <div>
                   <select
