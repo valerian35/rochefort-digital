@@ -87,10 +87,10 @@ export default function Ecommerce() {
                 à développer vos ventes en ligne et atteindre de nouveaux clients.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" className="btn-primary">
-                  Lancer mon projet e-commerce
+                <Link to="/rendez-vous" className="btn-primary">
+                  Prendre un rendez-vous
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <a href="#tarifs" className="btn-secondary">
                   Voir les offres
                 </a>
@@ -206,14 +206,14 @@ export default function Ecommerce() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="#contact"
+                  <Link
+                    to="/rendez-vous"
                     className={`block text-center py-3 rounded-full font-medium transition-all ${
                       plan.popular ? 'bg-white text-sage-600 hover:bg-cream-100' : 'bg-sage-500 text-white hover:bg-sage-600'
                     }`}
                   >
-                    Demander un devis
-                  </a>
+                    Prendre un rendez-vous
+                  </Link>
                 </div>
               ))}
             </div>
