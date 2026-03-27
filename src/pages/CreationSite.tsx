@@ -90,19 +90,6 @@ export default function CreationSite() {
 
   const pricing = [
     {
-      name: 'Site Vitrine',
-      price: 'À partir de 1 500',
-      description: 'Idéal pour présenter votre activité',
-      features: [
-        'Design personnalisé',
-        '5 pages',
-        'Formulaire de contact',
-        'Optimisation SEO de base',
-        'Responsive mobile',
-        'Hébergement 1 an inclus',
-      ],
-    },
-    {
       name: 'Site Premium',
       price: 'À partir de 3 000',
       description: 'Pour une présence en ligne complète',
@@ -113,7 +100,7 @@ export default function CreationSite() {
         'Optimisation SEO avancée',
         'Animations modernes',
         'Formation à la gestion',
-        'Support 6 mois',
+        'Optimisation SEO sur devis',
       ],
       popular: true,
     },
