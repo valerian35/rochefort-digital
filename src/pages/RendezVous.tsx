@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -79,13 +78,13 @@ export default function RendezVous() {
           </div>
 
           <div className="container-custom px-4 sm:px-6 lg:px-8 relative">
-            <Link
-              to="/"
+            <button
+              onClick={() => window.history.back()}
               className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-700 transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
               Retour a l'accueil
-            </Link>
+            </button>
 
             <div className="max-w-4xl">
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
@@ -221,21 +220,13 @@ export default function RendezVous() {
                   </div>
                 )}
 
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <button
-                    type="submit"
-                    className="btn-primary flex-1 justify-center"
-                  >
-                    <span>Envoyer ma demande</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                  <Link
-                    to="/contact"
-                    className="btn-secondary flex-1 justify-center"
-                  >
-                    <span>Me contacter</span>
-                  </Link>
-                </div>
+                <button
+                  type="submit"
+                  className="btn-primary w-full justify-center"
+                >
+                  <span>Envoyer ma demande</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </form>
             </div>
           </div>
