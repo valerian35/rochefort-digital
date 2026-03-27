@@ -150,14 +150,19 @@ export default function Header() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link
-              to="/contact"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            <a
+              href="mailto:contact@rochefort-digital.fr"
               className="inline-flex items-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 hover:shadow-lg"
             >
               <Send className="w-4 h-4" />
-              Me contacter
-            </Link>
+              contact@rochefort-digital.fr
+            </a>
+            <a
+              href="tel:+33698322073"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 hover:shadow-lg"
+            >
+              06 98 32 20 73
+            </a>
             <a
               href={isHomePage ? '/#contact' : '/?scroll=contact'}
               onClick={(e) => handleAnchorClick(e, 'contact')}
@@ -238,17 +243,21 @@ export default function Header() {
 
               <div className="border-t border-charcoal-100 my-4" />
 
-              <Link
-                to="/contact"
+              <a
+                href="mailto:contact@rochefort-digital.fr"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 w-full"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
               >
                 <Send className="w-4 h-4" />
-                Me contacter
-              </Link>
+                contact@rochefort-digital.fr
+              </a>
+
+              <a
+                href="tel:+33698322073"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sage-500 text-white font-medium rounded-full transition-all duration-300 hover:bg-sage-600 w-full"
+              >
+                <Phone className="w-4 h-4" />
+                06 98 32 20 73
+              </a>
 
               <a
                 href={isHomePage ? '/#contact' : '/?scroll=contact'}
