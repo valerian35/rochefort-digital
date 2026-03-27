@@ -47,21 +47,41 @@ export default function RendezVous() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        services: [],
-        budget: '',
-        message: '',
+    try {
+      const response = await fetch('https://formspree.io/f/xojpvolj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          services: formData.services.join(', '),
+          budget: formData.budget,
+          message: formData.message,
+        }),
       });
-      setSubmitted(false);
-    }, 3000);
+
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setFormData({
+            fullName: '',
+            email: '',
+            phone: '',
+            services: [],
+            budget: '',
+            message: '',
+          });
+          setSubmitted(false);
+        }, 3000);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (
