@@ -14,16 +14,17 @@ export default function Refonte() {
   }, []);
 
   useEffect(() => {
-    const scrollTo = searchParams.get('scroll');
-    if (scrollTo) {
+    if (window.location.hash) {
       setTimeout(() => {
-        const element = document.getElementById(scrollTo);
+        const element = document.querySelector(window.location.hash);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const offset = 80;
+          const top = element.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
         }
-      }, 100);
+      }, 50);
     }
-  }, [searchParams]);
+  }, []);
 
   const signs = [
     { icon: AlertTriangle, title: 'Design démodé', description: 'Votre site a plus de 3 ans et ne reflète plus votre image de marque actuelle.' },
