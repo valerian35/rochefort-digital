@@ -58,7 +58,7 @@ export default function Ecommerce() {
       name: 'Business',
       price: 'Sur devis',
       description: 'Pour une boutique complète',
-      features: ['Produits illimités', 'Design premium', 'Gestion des promotions', 'SEO avancé', 'Intégrations marketing', 'Support prioritaire 6 mois', 'Inclut l\'offre Starter'],
+      features: ['Inclut l\'offre Starter', 'Produits illimités', 'Design premium', 'Gestion des promotions', 'SEO avancé', 'Intégrations marketing', 'Support prioritaire 6 mois'],
       popular: true,
     },
   ];
@@ -197,7 +197,7 @@ export default function Ecommerce() {
                     {plan.description}
                   </p>
                   <div className={`text-3xl font-serif mb-6 ${plan.popular ? 'text-white' : 'text-charcoal-800'}`}>
-                    {plan.price}<span className="text-lg">EUR</span>
+                    {plan.price}
                   </div>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature) => (
