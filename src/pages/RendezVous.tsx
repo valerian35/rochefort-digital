@@ -70,7 +70,7 @@ export default function RendezVous() {
       if (!error) {
         setSubmitted(true);
         setTimeout(() => {
-          const calendlyUrl = `https://calendly.com/contact-rochefort-digital/30min?name=${encodeURIComponent(formData.fullName)}&email=${encodeURIComponent(formData.email)}&phone=${encodeURIComponent(formData.phone)}`;
+          const calendlyUrl = 'https://calendly.com/contact-rochefort-digital/30min';
           window.open(calendlyUrl, '_blank');
         }, 1000);
       }
