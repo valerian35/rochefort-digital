@@ -50,22 +50,16 @@ export default function Ecommerce() {
   const pricing = [
     {
       name: 'Starter',
-      price: 'À partir de 3 000',
+      price: 'Sur devis',
       description: 'Pour démarrer votre activité en ligne',
       features: ['Jusqu\'à 100 produits', 'Design personnalisé', 'Paiement sécurisé', 'Gestion des commandes', 'Optimisation SEO de base'],
     },
     {
       name: 'Business',
-      price: 'À partir de 6 000',
+      price: 'Sur devis',
       description: 'Pour une boutique complète',
       features: ['Produits illimités', 'Design premium', 'Multi-transporteurs', 'Gestion des promotions', 'SEO avancé', 'Intégrations marketing', 'Support 3 mois'],
       popular: true,
-    },
-    {
-      name: 'Enterprise',
-      price: 'Sur devis',
-      description: 'Solutions sur mesure',
-      features: ['Fonctionnalités custom', 'Intégrations ERP/CRM', 'Multi-boutiques', 'B2B/B2C', 'Performance optimisée', 'Support prioritaire'],
     },
   ];
 
