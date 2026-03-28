@@ -102,19 +102,6 @@ export default function SEO() {
       popular: true,
       monthly: true,
     },
-    {
-      name: 'SEO + Contenu',
-      price: 'Sur devis',
-      description: 'Solution complete avec redaction',
-      features: [
-        'Audit du contenu',
-        'Analyse des backlinks',
-        'Rapport détaillé + recommandations',
-        'Appel de restitution',
-        'Optimisation des pages existantes',
-        'Formation équipe',
-      ],
-    },
   ];
 
   return (
