@@ -52,7 +52,7 @@ export default function Ecommerce() {
       name: 'Starter',
       price: 'Sur devis',
       description: 'Pour démarrer votre activité en ligne',
-      features: ['Jusqu\'à 100 produits', 'Design personnalisé', 'Paiement sécurisé', 'Gestion des commandes', 'Optimisation SEO de base'],
+      features: ['Jusqu\'à 100 produits', 'Design personnalisé', 'Paiement sécurisé', 'Gestion des commandes', 'Optimisation SEO de base', 'B2B/B2C', 'Performance optimisée', 'Support prioritaire 3 mois'],
     },
     {
       name: 'Business',
