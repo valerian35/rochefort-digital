@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { createClient } from '@supabase/supabase-js';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
 export default function RendezVous() {
   const [formData, setFormData] = useState({
@@ -50,27 +56,23 @@ export default function RendezVous() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://formspree.io/f/xojpvolj', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
+      const { error } = await supabase
+        .from('contact_requests')
+        .insert([{
+          full_name: formData.fullName,
           email: formData.email,
           phone: formData.phone,
           services: formData.services.join(', '),
           budget: formData.budget,
           message: formData.message,
-        }),
-      });
+        }]);
 
-      if (response.ok) {
+      if (!error) {
         setSubmitted(true);
         setTimeout(() => {
           const calendlyUrl = `https://calendly.com/contact-rochefort-digital/30min?name=${encodeURIComponent(formData.fullName)}&email=${encodeURIComponent(formData.email)}&phone=${encodeURIComponent(formData.phone)}`;
-          window.location.href = calendlyUrl;
-        }, 2000);
+          window.open(calendlyUrl, '_blank');
+        }, 1000);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
