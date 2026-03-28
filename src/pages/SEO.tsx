@@ -242,8 +242,8 @@ export default function SEO() {
               {pricing.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative p-8 rounded-2xl transition-all duration-300 ${
-                    plan.popular ? 'bg-sage-600 text-white shadow-xl scale-105' : 'bg-cream-50 shadow-md hover:shadow-lg'
+                  className={`relative p-8 rounded-2xl transition-all duration-300 w-full max-w-xs ${
+                    plan.popular ? 'bg-sage-600 text-white shadow-xl' : 'bg-cream-50 shadow-md hover:shadow-lg'
                   }`}
                 >
                   {plan.popular && (

@@ -181,8 +181,8 @@ export default function Ecommerce() {
               {pricing.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative p-6 sm:p-8 rounded-2xl transition-all duration-300 ${
-                    plan.popular ? 'bg-sage-600 text-white shadow-xl scale-105' : 'bg-white shadow-md hover:shadow-lg'
+                  className={`relative p-6 sm:p-8 rounded-2xl transition-all duration-300 w-full max-w-xs ${
+                    plan.popular ? 'bg-sage-600 text-white shadow-xl' : 'bg-white shadow-md hover:shadow-lg'
                   }`}
                 >
                   {plan.popular && (
