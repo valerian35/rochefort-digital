@@ -158,14 +158,6 @@ export default function Header() {
               <Send className="w-4 h-4" />
               Me contacter
             </Link>
-            <a
-              href={isHomePage ? '/#contact' : '/?scroll=contact'}
-              onClick={(e) => handleAnchorClick(e, 'contact')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal-700/10 text-charcoal-700 font-medium rounded-full transition-all duration-300 hover:bg-charcoal-700/20"
-            >
-              Demander un devis
-              <span className="w-1.5 h-1.5 rounded-full bg-charcoal-700/60" />
-            </a>
           </div>
 
           <button
@@ -249,17 +241,6 @@ export default function Header() {
                 <Send className="w-4 h-4" />
                 Me contacter
               </Link>
-
-              <a
-                href={isHomePage ? '/#contact' : '/?scroll=contact'}
-                onClick={(e) => {
-                  handleAnchorClick(e, 'contact');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="btn-primary justify-center mt-4"
-              >
-                Demander un devis
-              </a>
             </div>
           </div>
         )}
