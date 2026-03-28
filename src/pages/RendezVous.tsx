@@ -68,7 +68,7 @@ export default function RendezVous() {
       if (response.ok) {
         setSubmitted(true);
         setTimeout(() => {
-          window.location.href = 'https://calendly.com/contact-rochefort-digital/30min';
+          window.open('https://calendly.com/contact-rochefort-digital/30min', '_blank');
         }, 2000);
       }
     } catch (error) {
