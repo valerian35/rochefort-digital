@@ -87,10 +87,11 @@ export default function SEO() {
       oneTime: true,
     },
     {
-      name: 'Accompagnement SEO',
-      price: 'A partir de 800',
+      name: 'Accompagnement SEO premium',
+      price: '500',
       description: 'Suivi mensuel pour des resultats durables',
       features: [
+        'Inclut l\'ensemble des prestations de l\'offre d\'accompagnement SEO',
         'Optimisations mensuelles',
         'Strategie de contenu',
         'Netlinking qualitatif',
