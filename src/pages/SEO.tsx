@@ -78,9 +78,9 @@ export default function SEO() {
       description: 'Suivi mensuel pour des résultats durables',
       features: [
         'Stratégie de mots-clés',
-        'Tout l\'accompagnement SEO et',
-        'Rédaction d\'articles optimisés et',
-        'Créations de backlinks et',
+        'Tout l\'accompagnement SEO',
+        'Rédaction d\'articles optimisés',
+        'Créations de backlinks',
         'Maillage interne avancé',
         'Etude de la concurrence',
       ],
