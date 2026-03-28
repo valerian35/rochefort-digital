@@ -187,7 +187,7 @@ export default function Ecommerce() {
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-charcoal-900 text-white text-sm rounded-full">
-                      Recommande
+                      Recommandé
                     </div>
                   )}
                   <h3 className={`font-serif text-2xl mb-2 ${plan.popular ? 'text-white' : 'text-charcoal-800'}`}>
