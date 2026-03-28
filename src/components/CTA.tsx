@@ -66,12 +66,7 @@ export default function CTA() {
       if (response.ok) {
         setIsSubmitted(true);
         setTimeout(() => {
-          setSector('');
-          setServices([]);
-          setTimeline('');
-          setPhone('');
-          setDescription('');
-          setIsSubmitted(false);
+          window.location.href = 'https://calendly.com/contact-rochefort-digital/30min';
         }, 2000);
       }
     } catch (error) {
