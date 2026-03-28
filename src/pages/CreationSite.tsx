@@ -323,10 +323,6 @@ export default function CreationSite() {
                   answer: 'Le délai moyen est de 4 à 8 semaines selon la complexité du projet. Un site vitrine simple peut être livré en 3 semaines, tandis qu\'un projet plus ambitieux peut nécessiter 2 à 3 mois.',
                 },
                 {
-                  question: 'Puis-je modifier mon site moi-même après livraison ?',
-                  answer: 'Oui, je vous fournis une formation complète pour gérer votre contenu en autonomie. Vous pourrez modifier textes, images et ajouter de nouvelles pages facilement.',
-                },
-                {
                   question: 'Le site sera-t-il optimisé pour Google ?',
                   answer: 'Absolument. L\'optimisation SEO technique est incluse dans chaque projet : structure HTML sémantique, balises meta, vitesse de chargement, et toutes les bonnes pratiques pour un bon référencement.',
                 },
