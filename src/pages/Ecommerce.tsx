@@ -58,7 +58,7 @@ export default function Ecommerce() {
       name: 'Business',
       price: 'Sur devis',
       description: 'Pour une boutique complète',
-      features: ['Produits illimités', 'Design premium', 'Multi-transporteurs', 'Gestion des promotions', 'SEO avancé', 'Intégrations marketing', 'Support 3 mois'],
+      features: ['Produits illimités', 'Design premium', 'Gestion des promotions', 'SEO avancé', 'Intégrations marketing', 'Support prioritaire 6 mois', 'Inclut l\'offre Starter'],
       popular: true,
     },
   ];
