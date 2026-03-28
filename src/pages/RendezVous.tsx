@@ -4,6 +4,14 @@ import { createClient } from '@supabase/supabase-js';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+declare global {
+  interface Window {
+    Calendly?: {
+      showPopupWidget(url: string): void;
+    };
+  }
+}
+
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_ANON_KEY
@@ -70,9 +78,10 @@ export default function RendezVous() {
       if (!error) {
         setSubmitted(true);
         setTimeout(() => {
-          const calendlyUrl = 'https://calendly.com/contact-rochefort-digital/30min';
-          window.open(calendlyUrl, '_blank');
-        }, 1000);
+          if (window.Calendly) {
+            window.Calendly.showPopupWidget('https://calendly.com/contact-rochefort-digital/30min');
+          }
+        }, 500);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
