@@ -6,6 +6,7 @@ export default function CTA() {
   const [timeline, setTimeline] = useState('');
   const [description, setDescription] = useState('');
   const [phone, setPhone] = useState('');
+  const [website, setWebsite] = useState('');
   const [services, setServices] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -59,6 +60,7 @@ export default function CTA() {
           services: services.join(', '),
           timeline,
           phone,
+          website,
           description,
         }),
       });
@@ -174,6 +176,15 @@ export default function CTA() {
                     placeholder="Votre numéro de téléphone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="url"
+                    placeholder="Lien de votre site internet (optionnel)"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
                     className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
                   />
                 </div>
