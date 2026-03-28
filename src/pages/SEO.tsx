@@ -238,7 +238,7 @@ export default function SEO() {
               </h2>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 max-w-5xl mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 max-w-6xl mx-auto">
               {pricing.map((plan) => (
                 <div
                   key={plan.name}

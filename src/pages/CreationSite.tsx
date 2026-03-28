@@ -255,7 +255,7 @@ export default function CreationSite() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-8 max-w-4xl mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-8 max-w-6xl mx-auto">
               {pricing.map((plan) => (
                 <div
                   key={plan.name}
