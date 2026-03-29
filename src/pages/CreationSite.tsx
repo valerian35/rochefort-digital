@@ -90,32 +90,24 @@ export default function CreationSite() {
 
   const pricing = [
     {
-      name: 'Site Premium',
-      price: 'À partir de 1 000',
-      description: 'Pour une présence en ligne complète',
+      name: 'Sur Mesure',
+      price: 'Sur devis',
+      description: 'Projets complexes et spécifiques',
       features: [
         'Design sur mesure',
         '10+ pages',
         'Blog intégré',
         'Responsive mobile',
         'Animations modernes',
-        'Formation à la gestion',
-        'Optimisation SEO sur devis',
-      ],
-      popular: true,
-    },
-    {
-      name: 'Sur Mesure',
-      price: 'Sur devis',
-      description: 'Projets complexes et spécifiques',
-      features: [
-        'Inclus l\'ensemble des prestations de l\'offre premium, avec des ajustements personnalisés selon vos besoins',
         'Intégrations API',
         'Espace client/admin',
         'Accompagnement complet',
         'Maintenance incluse',
         'Support prioritaire',
+        'Formation à la gestion',
+        'Optimisation SEO incluse',
       ],
+      popular: true,
     },
   ];
 
