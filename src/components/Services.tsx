@@ -7,7 +7,7 @@ const services = [
     title: 'Création Site Internet',
     subtitle: 'Sur Mesure',
     description:
-      'Sites vitrines et e-commerce conçus à Rennes pour PME et commerces. Designs modernes et optimisés conversion pour générer des clients.',
+      'Sites vitrines et e-commerce conçus pour PME et commerces partout en France. Designs modernes et optimisés conversion pour générer des clients et augmenter le chiffre d\'affaires.',
     image: 'https://i.ibb.co/1tv6T5sm/Capture-d-cran-2026-03-22-171026.png',
     link: '/creation-site-internet',
   },
@@ -16,7 +16,7 @@ const services = [
     title: 'Référencement',
     subtitle: 'SEO',
     description:
-      'Audit SEO complet, optimisation technique et stratégie de contenu pour dominer Google. Spécialiste en SEO Rennes & Bretagne.',
+      'Audit SEO complet, optimisation technique et stratégie de contenu pour dominer Google. Référencement professionnel partout en France et régions.',
     image: 'https://images.pexels.com/photos/67112/pexels-photo-67112.jpeg?auto=compress&cs=tinysrgb&w=800',
     link: '/seo-referencement',
   },
@@ -25,7 +25,7 @@ const services = [
     title: 'Refonte',
     subtitle: 'Site Web',
     description:
-      'Modernisez votre site avec design actuel et SEO optimisé. Refonte web complète pour booster votre visibilité Google à Rennes.',
+      'Modernisez votre site avec design actuel et SEO optimisé. Refonte web pour booster votre visibilité Google et vos résultats commerciaux.',
     image: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=800',
     link: '/refonte-site',
   },
@@ -34,7 +34,7 @@ const services = [
     title: 'E-commerce',
     subtitle: 'Boutique en ligne',
     description:
-      'Créez votre boutique en ligne performante, sécurisée et optimisée. Solutions e-commerce pour trouver des clients en ligne.',
+      'Créez votre boutique en ligne performante, sécurisée et optimisée. Développer son activité en ligne et trouver des clients sur internet.',
     image: 'https://i.ibb.co/Cs0NfZG0/Capture-d-cran-2026-03-22-170419.png',
     link: '/e-commerce',
   },
@@ -46,15 +46,15 @@ export default function Services() {
       <div className="container-custom">
         <div className="text-center mb-16">
           <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
-            Nos services à Rennes et en Bretagne
+            Nos services partout en France
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal-800 mb-6">
             <span className="text-charcoal-400">Solutions digitales complètes pour votre croissance,</span>
             <br />
-            du site web à la visibilité Google.
+            de la création de site au marketing digital national.
           </h2>
           <p className="text-charcoal-600 text-lg max-w-2xl mx-auto">
-            De la création de sites vitrines à la stratégie SEO complète, nos services allient technique et marketing pour des résultats mesurables.
+            Accompagnement complet en création web, référencement SEO et stratégie digitale pour les PME et commerces partout en France. Expertise technique et marketing pour des résultats concrets.
           </p>
         </div>
 

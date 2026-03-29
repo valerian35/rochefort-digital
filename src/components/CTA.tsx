@@ -131,11 +131,11 @@ export default function CTA() {
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-tight">
-            Lancez votre stratégie digitale à Rennes
+            Lancez votre stratégie digitale partout en France
           </h2>
 
           <p className="text-white/90 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-            Consultez votre agence web à Rennes pour comprendre pourquoi votre site n'attire pas assez de clients. Obtenez un plan d'action SEO concret pour dominer Google.
+            Consultez notre agence digitale pour comprendre pourquoi votre site web ne génère pas assez de clients. Obtenez un plan d'action SEO concret et une stratégie marketing pour développer votre business.
           </p>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-8">

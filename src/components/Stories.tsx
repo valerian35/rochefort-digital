@@ -30,17 +30,17 @@ export default function Stories() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
-              Cas de succès à Rennes et en Bretagne
+              Cas de succès partout en France
             </p>
 
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal-800 mb-6 leading-tight">
-              Visibilité Google retrouvée
+              Croissance digitale réelle
               <br />
-              <span className="text-charcoal-400">et croissance business réelle.</span>
+              <span className="text-charcoal-400">pour les PME et commerces en France.</span>
             </h2>
 
             <p className="text-charcoal-600 text-lg leading-relaxed mb-8">
-              Après des années sans présence en ligne, mes clients ont choisi une agence web à Rennes alliant technique et marketing digital. Grâce à des actions SEO concrètes et un site optimisé, ils ont retrouvé une visibilité durable auprès de leurs clients locaux et nationaux.
+              Nos clients ont retrouvé une présence forte en ligne grâce à une agence digitale alliant création web, référencement SEO et marketing digital. Avec des sites modernes et une stratégie optimisée, ils génèrent plus de clients et développent leur business partout en France.
             </p>
 
             <button

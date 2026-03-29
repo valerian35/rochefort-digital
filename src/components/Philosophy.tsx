@@ -19,18 +19,18 @@ export default function Philosophy() {
           </div>
 
           <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-8">
-            Notre approche à Rennes
+            Notre approche nationale
           </p>
 
           <h2 className="font-serif text-xl sm:text-2xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-8">
             Créer des sites web qui génèrent des résultats —{' '}
             <span className="text-charcoal-400 italic">
-              stratégie digitale complète pour votre croissance.
+              stratégie digitale complète pour développer votre business.
             </span>
           </h2>
 
           <p className="text-charcoal-600 text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
-            En tant que développeur web et expert SEO à Rennes, je combine expertise technique et stratégie marketing pour créer des sites qui convertissent. Chaque projet reçoit une approche personnalisée pour maximiser votre visibilité Google et vos résultats business.
+            Agence digitale basée à Rennes, nous accompagnons les PME et commerces partout en France. Expertise en création web, référencement SEO et marketing digital pour maximiser votre visibilité Google et vos résultats commerciaux. Chaque projet reçoit une stratégie personnalisée pour votre croissance.
           </p>
 
           <button
@@ -46,18 +46,18 @@ export default function Philosophy() {
           {[
             {
               number: '01',
-              title: 'Web + SEO combinés',
-              description: 'Développeur web et spécialiste SEO Rennes : créer des sites modernes et optimisés Google depuis le départ.',
+              title: 'Web + SEO + Marketing',
+              description: 'Créer des sites modernes et optimisés Google, couplés à une stratégie marketing digitale complète pour attirer vos clients partout en France.',
             },
             {
               number: '02',
               title: 'Résultats mesurables',
-              description: 'Chaque action vise un objectif : augmenter votre trafic, vos demandes de devis et votre chiffre d\'affaires.',
+              description: 'Chaque action vise des objectifs concrets : augmenter votre trafic, vos demandes et votre chiffre d\'affaires. Accompagnement national pour votre croissance.',
             },
             {
               number: '03',
-              title: 'Accompagnement complet',
-              description: 'De la création à la mise en ligne en passant par le suivi SEO : une stratégie digitale globale pour votre réussite.',
+              title: 'Expertise complète',
+              description: 'Agence digitale : création web, référencement SEO professionnel, stratégie marketing. Une solution globale pour développer votre business en ligne.',
             },
           ].map((item) => (
             <div
