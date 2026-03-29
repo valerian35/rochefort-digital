@@ -24,7 +24,8 @@ function AppContent() {
     const redirect = params.get('redirect');
 
     if (redirect) {
-      navigate('/' + redirect, { replace: true });
+      const decodedRedirect = decodeURIComponent(redirect);
+      navigate('/' + decodedRedirect, { replace: true });
     }
   }, [navigate, location]);
 
