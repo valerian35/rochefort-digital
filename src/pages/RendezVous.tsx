@@ -90,6 +90,12 @@ export default function RendezVous() {
       if (!error) {
         setSubmitted(true);
         setTimeout(() => {
+          if (successMessageRef.current) {
+            successMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.scrollBy({ top: -80, behavior: 'smooth' });
+          }
+        }, 300);
+        setTimeout(() => {
           if (window.Calendly && typeof window.Calendly.showPopupWidget === 'function') {
             window.Calendly.showPopupWidget('https://calendly.com/contact-rochefort-digital/30min');
           } else {
