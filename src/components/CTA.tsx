@@ -158,12 +158,9 @@ export default function CTA() {
               <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
               <div className="bg-white rounded-2xl p-8 text-center animate-scale-in max-w-md relative shadow-2xl">
                 <CheckCircle className="w-16 h-16 text-sage-500 mx-auto mb-4" />
-                <h3 className="font-serif text-2xl text-charcoal-800 mb-2">
+                <h3 className="font-serif text-3xl text-charcoal-800">
                   Merci pour votre demande !
                 </h3>
-                <p className="text-charcoal-600">
-                  Je vous contacte sous 24h avec votre audit personnalise.
-                </p>
               </div>
             </div>
           ) : (
