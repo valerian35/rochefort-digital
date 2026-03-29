@@ -98,9 +98,9 @@ export default function RendezVous() {
               if (window.Calendly && typeof window.Calendly.showPopupWidget === 'function') {
                 window.Calendly.showPopupWidget('https://calendly.com/contact-rochefort-digital/30min');
               }
-            }, 1000);
+            }, 2000);
           }
-        }, 800);
+        }, 1500);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
