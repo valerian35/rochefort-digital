@@ -32,7 +32,10 @@ export default function RendezVous() {
 
   useEffect(() => {
     if (submitted && successMessageRef.current) {
-      successMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        successMessageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.scrollBy({ top: -100, behavior: 'smooth' });
+      }, 100);
     }
   }, [submitted]);
 
@@ -242,10 +245,10 @@ export default function RendezVous() {
                 </div>
 
                 {submitted && (
-                  <div ref={successMessageRef} className="p-4 bg-green-50 border border-green-300 rounded-lg flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <div ref={successMessageRef} className="p-6 bg-green-50 border-2 border-green-400 rounded-lg flex items-center gap-4 shadow-lg animate-pulse">
+                    <Check className="w-8 h-8 text-green-600 flex-shrink-0" />
                     <div>
-                      <p className="text-green-900 font-medium">Message envoyé avec succès!</p>
+                      <p className="text-green-900 font-bold text-lg">Message envoyé avec succès!</p>
                       <p className="text-green-800 text-sm">Je vous recontacterai très rapidement.</p>
                     </div>
                   </div>
