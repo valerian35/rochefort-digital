@@ -19,18 +19,18 @@ export default function Philosophy() {
           </div>
 
           <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-8">
-            Notre approche nationale
+            Mon approche
           </p>
 
           <h2 className="font-serif text-xl sm:text-2xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-8">
-            Créer des sites web qui génèrent des résultats —{' '}
+            Créer des sites qui convertissent —{' '}
             <span className="text-charcoal-400 italic">
-              stratégie digitale complète pour développer votre business.
+              un interlocuteur unique, un accompagnement sur mesure.
             </span>
           </h2>
 
           <p className="text-charcoal-600 text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
-            Agence digitale basée à Rennes, nous accompagnons les PME et commerces partout en France. Expertise en création web, référencement SEO et marketing digital pour maximiser votre visibilité Google et vos résultats commerciaux. Chaque projet reçoit une stratégie personnalisée pour votre croissance.
+            Je suis freelance développeur web à Rennes. Vous avez un unique interlocuteur — pas de meeting sans fin, pas de communication filtrée. Je crée des sites performants et optimisés SEO pour les PME et commerces. Disponible, réactif, et engagé pour vos résultats.
           </p>
 
           <button
@@ -46,18 +46,18 @@ export default function Philosophy() {
           {[
             {
               number: '01',
-              title: 'Web + SEO + Marketing',
-              description: 'Créer des sites modernes et optimisés Google, couplés à une stratégie marketing digitale complète pour attirer vos clients partout en France.',
+              title: 'Création Web + SEO',
+              description: 'Je crée des sites modernes et optimisés dès le départ. Pas d\'ajustements après : du planning à la mise en ligne, tout est pensé pour convertir et ranker sur Google.',
             },
             {
               number: '02',
-              title: 'Résultats mesurables',
-              description: 'Chaque action vise des objectifs concrets : augmenter votre trafic, vos demandes et votre chiffre d\'affaires. Accompagnement national pour votre croissance.',
+              title: 'Suivi réactif',
+              description: 'Pas de délai de réponse frustrant. Vous m\'envoyez un message, je vous réponds vite. Un vrai partenaire disponible pour vos projets et vos questions.',
             },
             {
               number: '03',
-              title: 'Expertise complète',
-              description: 'Agence digitale : création web, référencement SEO professionnel, stratégie marketing. Une solution globale pour développer votre business en ligne.',
+              title: 'Résultats concrets',
+              description: 'Chaque action a un objectif : générer du trafic qualifié, augmenter vos leads, booster votre chiffre d\'affaires. Vous voyez les résultats, pas juste des rapports.',
             },
           ].map((item) => (
             <div

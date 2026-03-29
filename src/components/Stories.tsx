@@ -30,17 +30,17 @@ export default function Stories() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
-              Cas de succès partout en France
+              Résultats concrets à Rennes
             </p>
 
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal-800 mb-6 leading-tight">
-              Croissance digitale réelle
+              Des résultats visibles
               <br />
-              <span className="text-charcoal-400">pour les PME et commerces en France.</span>
+              <span className="text-charcoal-400">pas juste de belles paroles.</span>
             </h2>
 
             <p className="text-charcoal-600 text-lg leading-relaxed mb-8">
-              Nos clients ont retrouvé une présence forte en ligne grâce à une agence digitale alliant création web, référencement SEO et marketing digital. Avec des sites modernes et une stratégie optimisée, ils génèrent plus de clients et développent leur business partout en France.
+              Mes clients ont retrouvé une vraie visibilité en ligne. Des sites modernes, une stratégie SEO efficace, et surtout : du trafic qualifié qui se transforme en commandes. C'est ma seule métrique : vos résultats.
             </p>
 
             <button

@@ -33,15 +33,15 @@ export default function Hero() {
           </div>
 
           <h1 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 opacity-0 animate-fade-in-up animate-delay-100 leading-tight">
-            Développez votre business en ligne partout en France
+            Développez votre présence digitale à Rennes
             <br />
-            <span className="italic text-white/90">et convertissez vos visiteurs en clients</span>
+            <span className="italic text-white/90">et générez plus de clients en ligne</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up animate-delay-200 leading-relaxed">
-            Agence digitale basée à Rennes, nous créons des sites performants et optimisés Google pour les PME et commerces partout en France.
+            Je suis freelance développeur web à Rennes. Je crée des sites performants et optimisés Google pour les PME et commerces.
             <br />
-            <span className="text-white">Stratégie web, design moderne, marketing digital — accompagnement complet national.</span>
+            <span className="text-white">Un interlocuteur unique, un accompagnement personnalisé, des résultats concrets.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in-up animate-delay-300">

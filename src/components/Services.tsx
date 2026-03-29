@@ -7,7 +7,7 @@ const services = [
     title: 'Création Site Internet',
     subtitle: 'Sur Mesure',
     description:
-      'Sites vitrines et e-commerce conçus pour PME et commerces partout en France. Designs modernes et optimisés conversion pour générer des clients et augmenter le chiffre d\'affaires.',
+      'Je conçois des sites vitrines et e-commerce performants. Designs modernes et optimisés conversion pour générer des clients et augmenter vos ventes.',
     image: 'https://i.ibb.co/1tv6T5sm/Capture-d-cran-2026-03-22-171026.png',
     link: '/creation-site-internet',
   },
@@ -16,7 +16,7 @@ const services = [
     title: 'Référencement',
     subtitle: 'SEO',
     description:
-      'Audit SEO complet, optimisation technique et stratégie de contenu pour dominer Google. Référencement professionnel partout en France et régions.',
+      'Audit SEO complet, optimisation technique et stratégie de contenu. Dominez Google avec un référencement professionnel et durable à Rennes.',
     image: 'https://images.pexels.com/photos/67112/pexels-photo-67112.jpeg?auto=compress&cs=tinysrgb&w=800',
     link: '/seo-referencement',
   },
@@ -25,7 +25,7 @@ const services = [
     title: 'Refonte',
     subtitle: 'Site Web',
     description:
-      'Modernisez votre site avec design actuel et SEO optimisé. Refonte web pour booster votre visibilité Google et vos résultats commerciaux.',
+      'Je modernise votre site avec un design actuel et une optimisation SEO complète. Boostez votre visibilité Google et vos résultats commerciaux.',
     image: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=800',
     link: '/refonte-site',
   },
@@ -34,7 +34,7 @@ const services = [
     title: 'E-commerce',
     subtitle: 'Boutique en ligne',
     description:
-      'Créez votre boutique en ligne performante, sécurisée et optimisée. Développer son activité en ligne et trouver des clients sur internet.',
+      'Créez votre boutique en ligne performante et sécurisée. Je vous accompagne pour développer votre activité et trouver des clients en ligne.',
     image: 'https://i.ibb.co/Cs0NfZG0/Capture-d-cran-2026-03-22-170419.png',
     link: '/e-commerce',
   },
@@ -46,15 +46,15 @@ export default function Services() {
       <div className="container-custom">
         <div className="text-center mb-16">
           <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
-            Nos services partout en France
+            Mes services à Rennes
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal-800 mb-6">
-            <span className="text-charcoal-400">Solutions digitales complètes pour votre croissance,</span>
+            <span className="text-charcoal-400">Tout ce qu'il vous faut pour réussir en ligne,</span>
             <br />
-            de la création de site au marketing digital national.
+            de la création du site au suivi SEO.
           </h2>
           <p className="text-charcoal-600 text-lg max-w-2xl mx-auto">
-            Accompagnement complet en création web, référencement SEO et stratégie digitale pour les PME et commerces partout en France. Expertise technique et marketing pour des résultats concrets.
+            Je vous accompagne personnellement sur chaque projet. Création web, référencement SEO et conseil digital — expertise technique pour des résultats mesurables et durables.
           </p>
         </div>
 
