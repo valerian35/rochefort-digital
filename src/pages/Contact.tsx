@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { createClient } from '@supabase/supabase-js';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -50,22 +51,23 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://formspree.io/f/xojpvolj', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          services: formData.services.join(', '),
-          budget: formData.budget,
-          message: formData.message,
-        }),
-      });
+      const supabase = createClient(
+        import.meta.env.VITE_SUPABASE_URL,
+        import.meta.env.VITE_SUPABASE_ANON_KEY
+      );
 
-      if (response.ok) {
+      const { error } = await supabase.from('contact_requests').insert([
+        {
+          full_name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone || null,
+          services: formData.services.join(', ') || null,
+          budget: formData.budget || null,
+          message: formData.message || null,
+        },
+      ]);
+
+      if (!error) {
         setSubmitted(true);
         setTimeout(() => {
           window.location.href = 'https://calendly.com/contact-rochefort-digital/30min';
