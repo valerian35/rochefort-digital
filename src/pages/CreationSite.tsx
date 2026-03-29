@@ -91,7 +91,7 @@ export default function CreationSite() {
   const pricing = [
     {
       name: 'Site Premium',
-      price: 'À partir de 1 500',
+      price: 'À partir de 1 000',
       description: 'Pour une présence en ligne complète',
       features: [
         'Design sur mesure',
