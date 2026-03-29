@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import React from 'react';
 import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 import Header from '../components/Header';
@@ -8,6 +9,7 @@ declare global {
   interface Window {
     Calendly?: {
       showPopupWidget(url: string): void;
+      initBadgeWidget(): void;
     };
   }
 }
@@ -88,10 +90,17 @@ export default function RendezVous() {
       if (!error) {
         setSubmitted(true);
         setTimeout(() => {
-          if (window.Calendly) {
+          if (window.Calendly && typeof window.Calendly.showPopupWidget === 'function') {
             window.Calendly.showPopupWidget('https://calendly.com/contact-rochefort-digital/30min');
+          } else {
+            console.warn('Calendly not ready, retrying...');
+            setTimeout(() => {
+              if (window.Calendly && typeof window.Calendly.showPopupWidget === 'function') {
+                window.Calendly.showPopupWidget('https://calendly.com/contact-rochefort-digital/30min');
+              }
+            }, 1000);
           }
-        }, 500);
+        }, 800);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
