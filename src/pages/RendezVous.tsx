@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, ArrowLeft, ArrowRight, Check } from 'lucide-react';
-import { createClient } from '@supabase/supabase-js';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -14,11 +13,6 @@ declare global {
   }
 }
 
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
-
 export default function RendezVous() {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -30,6 +24,8 @@ export default function RendezVous() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
   const successMessageRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -75,20 +71,34 @@ export default function RendezVous() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const { error } = await supabase
-        .from('contact_requests')
-        .insert([{
-          full_name: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          services: formData.services.join(', '),
-          budget: formData.budget,
-          message: formData.message,
-        }]);
+    setError('');
+    setIsLoading(true);
 
-      if (!error) {
+    try {
+      const formDataToSubmit = new FormData();
+      formDataToSubmit.append('email', formData.email);
+      formDataToSubmit.append('name', formData.fullName);
+      formDataToSubmit.append('phone', formData.phone);
+      formDataToSubmit.append('services', formData.services.join(', '));
+      formDataToSubmit.append('budget', formData.budget);
+      formDataToSubmit.append('message', formData.message);
+
+      const response = await fetch('https://formspree.io/f/xvgzvapy', {
+        method: 'POST',
+        body: formDataToSubmit,
+      });
+
+      if (response.ok) {
         setSubmitted(true);
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          services: [],
+          budget: '',
+          message: '',
+        });
+
         setTimeout(() => {
           if (successMessageRef.current) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -97,6 +107,7 @@ export default function RendezVous() {
             }, 300);
           }
         }, 100);
+
         setTimeout(() => {
           if (window.Calendly && typeof window.Calendly.showPopupWidget === 'function') {
             window.Calendly.showPopupWidget('https://calendly.com/contact-rochefort-digital/30min');
@@ -109,9 +120,18 @@ export default function RendezVous() {
             }, 2000);
           }
         }, 1500);
+
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
+      } else {
+        setError('Erreur lors de l\'envoi du message. Veuillez réessayer.');
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    } catch (err) {
+      setError('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+      console.error('Error submitting form:', err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -162,6 +182,11 @@ export default function RendezVous() {
                     <p className="text-green-900 font-bold text-lg">Message envoyé avec succès!</p>
                     <p className="text-green-800 text-sm">Je vous recontacterai très rapidement.</p>
                   </div>
+                </div>
+              )}
+              {error && (
+                <div className="mb-8 p-6 bg-red-50 border-2 border-red-400 rounded-lg">
+                  <p className="text-red-900 font-bold text-lg">{error}</p>
                 </div>
               )}
               <form onSubmit={handleSubmit} className="space-y-8">
@@ -272,10 +297,11 @@ export default function RendezVous() {
 
                 <button
                   type="submit"
-                  className="btn-primary w-full justify-center"
+                  disabled={isLoading}
+                  className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <span>Envoyer ma demande</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>{isLoading ? 'Envoi en cours...' : 'Envoyer ma demande'}</span>
+                  {!isLoading && <ArrowRight className="w-4 h-4" />}
                 </button>
               </form>
             </div>
