@@ -7,7 +7,7 @@ const services = [
     title: 'Création Site Internet',
     subtitle: 'Sur Mesure',
     description:
-      'Sites vitrines, applications web ou plateformes personnalisées. Un développement adapté à vos objectifs business.',
+      'Sites vitrines et e-commerce conçus à Rennes pour PME et commerces. Designs modernes et optimisés conversion pour générer des clients.',
     image: 'https://i.ibb.co/1tv6T5sm/Capture-d-cran-2026-03-22-171026.png',
     link: '/creation-site-internet',
   },
@@ -16,7 +16,7 @@ const services = [
     title: 'Référencement',
     subtitle: 'SEO',
     description:
-      'Audit complet, optimisation technique et stratégie de contenu pour dominer les résultats Google.',
+      'Audit SEO complet, optimisation technique et stratégie de contenu pour dominer Google. Spécialiste en SEO Rennes & Bretagne.',
     image: 'https://images.pexels.com/photos/67112/pexels-photo-67112.jpeg?auto=compress&cs=tinysrgb&w=800',
     link: '/seo-referencement',
   },
@@ -25,7 +25,7 @@ const services = [
     title: 'Refonte',
     subtitle: 'Site Web',
     description:
-      'Modernisez votre site existant avec un design actuel et des performances SEO optimisées.',
+      'Modernisez votre site avec design actuel et SEO optimisé. Refonte web complète pour booster votre visibilité Google à Rennes.',
     image: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=800',
     link: '/refonte-site',
   },
@@ -34,7 +34,7 @@ const services = [
     title: 'E-commerce',
     subtitle: 'Boutique en ligne',
     description:
-      'Lancez votre boutique en ligne avec un site performant, sécurisé et optimisé pour la conversion.',
+      'Créez votre boutique en ligne performante, sécurisée et optimisée. Solutions e-commerce pour trouver des clients en ligne.',
     image: 'https://i.ibb.co/Cs0NfZG0/Capture-d-cran-2026-03-22-170419.png',
     link: '/e-commerce',
   },
@@ -46,15 +46,15 @@ export default function Services() {
       <div className="container-custom">
         <div className="text-center mb-16">
           <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
-            Mes services
+            Nos services à Rennes et en Bretagne
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal-800 mb-6">
-            <span className="text-charcoal-400">Le chemin n'est jamais le même,</span>
+            <span className="text-charcoal-400">Solutions digitales complètes pour votre croissance,</span>
             <br />
-            mais il y a des étapes claires.
+            du site web à la visibilité Google.
           </h2>
           <p className="text-charcoal-600 text-lg max-w-2xl mx-auto">
-            Chaque projet est unique. Voici comment je vous accompagne pour développer votre présence en ligne.
+            De la création de sites vitrines à la stratégie SEO complète, nos services allient technique et marketing pour des résultats mesurables.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function Services() {
               <div className="absolute inset-0">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} - agence web Rennes - ${service.subtitle}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />

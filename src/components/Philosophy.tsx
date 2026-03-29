@@ -19,18 +19,18 @@ export default function Philosophy() {
           </div>
 
           <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-8">
-            Ma philosophie
+            Notre approche à Rennes
           </p>
 
           <h2 className="font-serif text-xl sm:text-2xl md:text-4xl lg:text-5xl text-charcoal-800 leading-tight mb-8">
-            Je ne crée pas simplement des sites —{' '}
+            Créer des sites web qui génèrent des résultats —{' '}
             <span className="text-charcoal-400 italic">
-              je construis des outils de croissance qui génèrent des résultats durables.
+              stratégie digitale complète pour votre croissance.
             </span>
           </h2>
 
           <p className="text-charcoal-600 text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
-            En combinant expertise technique et stratégie SEO, je conçois des solutions web qui ne se contentent pas d'exister, mais qui attirent, engagent et convertissent vos visiteurs en clients.
+            En tant que développeur web et expert SEO à Rennes, je combine expertise technique et stratégie marketing pour créer des sites qui convertissent. Chaque projet reçoit une approche personnalisée pour maximiser votre visibilité Google et vos résultats business.
           </p>
 
           <button
@@ -46,18 +46,18 @@ export default function Philosophy() {
           {[
             {
               number: '01',
-              title: 'Double expertise',
-              description: 'Développeur web et expert SEO : une compétence rare pour des sites vraiment performants.',
+              title: 'Web + SEO combinés',
+              description: 'Développeur web et spécialiste SEO Rennes : créer des sites modernes et optimisés Google depuis le départ.',
             },
             {
               number: '02',
-              title: 'Orientation résultats',
-              description: 'Chaque décision est guidée par un objectif : générer du trafic et des conversions.',
+              title: 'Résultats mesurables',
+              description: 'Chaque action vise un objectif : augmenter votre trafic, vos demandes de devis et votre chiffre d\'affaires.',
             },
             {
               number: '03',
               title: 'Accompagnement complet',
-              description: 'De la conception à la mise en ligne, puis au suivi SEO, je vous accompagne à chaque étape.',
+              description: 'De la création à la mise en ligne en passant par le suivi SEO : une stratégie digitale globale pour votre réussite.',
             },
           ].map((item) => (
             <div

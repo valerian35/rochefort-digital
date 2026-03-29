@@ -131,19 +131,19 @@ export default function CTA() {
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-tight">
-            Prendre un rendez-vous
+            Lancez votre stratégie digitale à Rennes
           </h2>
 
           <p className="text-white/90 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-            Découvrez pourquoi votre site ne performe pas et obtenez un plan d'action concret pour améliorer votre visibilité sur Google.
+            Consultez votre agence web à Rennes pour comprendre pourquoi votre site n'attire pas assez de clients. Obtenez un plan d'action SEO concret pour dominer Google.
           </p>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-8">
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
               {[
-                'Analyse technique complète',
-                'Points bloquants identifiés',
-                'Recommandations concrètes',
+                'Audit SEO complet & technique',
+                'Points bloquants pour vos clients',
+                'Stratégie digitale gagnante',
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3 text-white">
                   <CheckCircle className="w-5 h-5 text-white/80 flex-shrink-0" />

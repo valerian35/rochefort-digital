@@ -33,15 +33,15 @@ export default function Hero() {
           </div>
 
           <h1 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 opacity-0 animate-fade-in-up animate-delay-100 leading-tight">
-            Et si trouver des clients
+            Créez votre présence digitale forte à Rennes
             <br />
-            <span className="italic text-white/90">etait aussi simple qu'un clic ?</span>
+            <span className="italic text-white/90">et convertissez vos visiteurs en clients</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up animate-delay-200 leading-relaxed">
-            Vous êtes plus proche que vous ne le pensez.
+            Votre agence web à Rennes vous crée un site performant, optimisé Google et conçu pour générer des résultats durables.
             <br />
-            Chaque action vous rapproche de vos objectifs.
+            <span className="text-white">Stratégie, design, SEO — tout ce dont vous avez besoin.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in-up animate-delay-300">

@@ -30,17 +30,17 @@ export default function Stories() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">
-              Des vrais resultats. Des vrais clients.
+              Cas de succès à Rennes et en Bretagne
             </p>
 
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal-800 mb-6 leading-tight">
-              Retrouver la croissance
+              Visibilité Google retrouvée
               <br />
-              <span className="text-charcoal-400">après la stagnation.</span>
+              <span className="text-charcoal-400">et croissance business réelle.</span>
             </h2>
 
             <p className="text-charcoal-600 text-lg leading-relaxed mb-8">
-              Après des années de site web invisible et de stratégies inefficaces, mes clients ont fait le choix d'un accompagnement qui allie technique et stratégie. À travers des actions concrètes et mesurées, ils ont retrouvé une visibilité durable et une croissance réelle.
+              Après des années sans présence en ligne, mes clients ont choisi une agence web à Rennes alliant technique et marketing digital. Grâce à des actions SEO concrètes et un site optimisé, ils ont retrouvé une visibilité durable auprès de leurs clients locaux et nationaux.
             </p>
 
             <button
@@ -57,7 +57,7 @@ export default function Stories() {
               <div className="space-y-4">
                 <img
                   src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Collaboration equipe"
+                  alt="Équipe agence digitale collaborant sur projet web Rennes"
                   className="w-full h-64 object-cover rounded-2xl"
                   loading="lazy"
                 />
@@ -94,7 +94,7 @@ export default function Stories() {
                 </div>
                 <img
                   src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Resultats business"
+                  alt="Croissance business et résultats SEO pour agence Rennes"
                   className="w-full h-56 object-cover rounded-2xl"
                   loading="lazy"
                 />
