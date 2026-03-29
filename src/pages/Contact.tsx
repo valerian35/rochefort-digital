@@ -67,9 +67,7 @@ export default function Contact() {
       newErrors.phone = 'Veuillez entrer un numéro de téléphone valide';
     }
 
-    if (!formData.message.trim()) {
-      newErrors.message = 'Veuillez décrire votre projet';
-    } else if (formData.message.trim().length < 10) {
+    if (formData.message.trim().length > 0 && formData.message.trim().length < 10) {
       newErrors.message = 'Veuillez fournir plus de détails (minimum 10 caractères)';
     }
 

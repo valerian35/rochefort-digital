@@ -71,9 +71,7 @@ export default function CTA() {
       newErrors.website = 'Veuillez entrer une URL valide (ex: https://example.com)';
     }
 
-    if (!description.trim()) {
-      newErrors.description = 'Veuillez décrire votre projet';
-    } else if (description.trim().length < 10) {
+    if (description.trim().length > 0 && description.trim().length < 10) {
       newErrors.description = 'Veuillez fournir plus de détails (minimum 10 caractères)';
     }
 
