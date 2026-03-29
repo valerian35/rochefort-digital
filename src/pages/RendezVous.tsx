@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 import Header from '../components/Header';
@@ -28,6 +28,13 @@ export default function RendezVous() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const successMessageRef = React.useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (submitted && successMessageRef.current) {
+      successMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [submitted]);
 
   const services = [
     { id: 'web', label: 'Création de site web' },
@@ -235,7 +242,7 @@ export default function RendezVous() {
                 </div>
 
                 {submitted && (
-                  <div className="p-4 bg-green-50 border border-green-300 rounded-lg flex items-center gap-3">
+                  <div ref={successMessageRef} className="p-4 bg-green-50 border border-green-300 rounded-lg flex items-center gap-3">
                     <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <div>
                       <p className="text-green-900 font-medium">Message envoyé avec succès!</p>
