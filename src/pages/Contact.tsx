@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { User, Mail, Phone, MessageSquare, Briefcase, DollarSign, ArrowLeft, ArrowRight, Check, AlertCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -14,6 +14,7 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const services = [
     { id: 'web', label: 'Création de site web' },
@@ -39,16 +40,52 @@ export default function Contact() {
           ? [...prev.services, value]
           : prev.services.filter(s => s !== value)
       }));
+      setErrors(prev => ({ ...prev, services: '' }));
     } else {
       setFormData(prev => ({
         ...prev,
         [name]: value
       }));
+      setErrors(prev => ({ ...prev, [name]: '' }));
     }
+  };
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Veuillez entrer votre nom complet';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Veuillez entrer votre email';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Veuillez entrer une adresse email valide';
+    }
+
+    if (formData.phone && !/^[\d\s\-\+\(\)\.]+$/.test(formData.phone)) {
+      newErrors.phone = 'Veuillez entrer un numéro de téléphone valide';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Veuillez décrire votre projet';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Veuillez fournir plus de détails (minimum 10 caractères)';
+    }
+
+    return newErrors;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const newErrors = validateForm();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
     try {
       const response = await fetch('https://formspree.io/f/xojpvolj', {
         method: 'POST',
@@ -130,9 +167,16 @@ export default function Contact() {
                       value={formData.fullName}
                       onChange={handleChange}
                       placeholder="Jean Dupont"
-                      required
-                      className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors"
+                      className={`w-full px-4 py-3 bg-cream-50 border rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:ring-2 transition-colors ${
+                        errors.fullName ? 'border-red-400 focus:border-red-400 focus:ring-red-100' : 'border-sage-200 focus:border-sage-400 focus:ring-sage-100'
+                      }`}
                     />
+                    {errors.fullName && (
+                      <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.fullName}
+                      </div>
+                    )}
                   </div>
 
                   <div>
@@ -147,9 +191,16 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="jean@exemple.com"
-                      required
-                      className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors"
+                      className={`w-full px-4 py-3 bg-cream-50 border rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:ring-2 transition-colors ${
+                        errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-100' : 'border-sage-200 focus:border-sage-400 focus:ring-sage-100'
+                      }`}
                     />
+                    {errors.email && (
+                      <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">
+                        <AlertCircle className="w-4 h-4" />
+                        {errors.email}
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -164,8 +215,16 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="06 12 34 56 78"
-                    className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors"
+                    className={`w-full px-4 py-3 bg-cream-50 border rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:ring-2 transition-colors ${
+                      errors.phone ? 'border-red-400 focus:border-red-400 focus:ring-red-100' : 'border-sage-200 focus:border-sage-400 focus:ring-sage-100'
+                    }`}
                   />
+                  {errors.phone && (
+                    <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.phone}
+                    </div>
+                  )}
                 </div>
 
                 <div>
@@ -218,8 +277,16 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Décrivez votre projet, vos objectifs et vos attentes..."
                     rows={6}
-                    className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors resize-none"
+                    className={`w-full px-4 py-3 bg-cream-50 border rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:ring-2 transition-colors resize-none ${
+                      errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-100' : 'border-sage-200 focus:border-sage-400 focus:ring-sage-100'
+                    }`}
                   />
+                  {errors.message && (
+                    <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.message}
+                    </div>
+                  )}
                 </div>
 
                 {submitted && (

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
+import { ArrowRight, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 
 export default function CTA() {
   const [sector, setSector] = useState('');
@@ -10,6 +10,7 @@ export default function CTA() {
   const [services, setServices] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const sectorOptions = [
     'Artisanat',
@@ -45,8 +46,50 @@ export default function CTA() {
     );
   };
 
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!sector.trim()) {
+      newErrors.sector = 'Veuillez sélectionner un secteur d\'activité';
+    }
+
+    if (services.length === 0) {
+      newErrors.services = 'Veuillez sélectionner au moins un service';
+    }
+
+    if (!timeline.trim()) {
+      newErrors.timeline = 'Veuillez sélectionner une timeline';
+    }
+
+    if (!phone.trim()) {
+      newErrors.phone = 'Veuillez entrer votre numéro de téléphone';
+    } else if (!/^[\d\s\-\+\(\)\.]+$/.test(phone)) {
+      newErrors.phone = 'Veuillez entrer un numéro de téléphone valide';
+    }
+
+    if (website && !/^https?:\/\/.+/.test(website)) {
+      newErrors.website = 'Veuillez entrer une URL valide (ex: https://example.com)';
+    }
+
+    if (!description.trim()) {
+      newErrors.description = 'Veuillez décrire votre projet';
+    } else if (description.trim().length < 10) {
+      newErrors.description = 'Veuillez fournir plus de détails (minimum 10 caractères)';
+    }
+
+    return newErrors;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const newErrors = validateForm();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -128,9 +171,13 @@ export default function CTA() {
                 <div>
                   <select
                     value={sector}
-                    onChange={(e) => setSector(e.target.value)}
-                    required
-                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+                    onChange={(e) => {
+                      setSector(e.target.value);
+                      setErrors(prev => ({ ...prev, sector: '' }));
+                    }}
+                    className={`w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 ${
+                      errors.sector ? 'ring-red-400 focus:ring-red-400' : 'focus:ring-white/50'
+                    }`}
                   >
                     <option value="">Sélectionnez votre secteur d'activité</option>
                     {sectorOptions.map((sector) => (
@@ -139,6 +186,12 @@ export default function CTA() {
                       </option>
                     ))}
                   </select>
+                  {errors.sector && (
+                    <div className="flex items-center gap-2 mt-2 text-red-200 text-sm">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.sector}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <label className="block text-white mb-3 text-sm font-medium">Services qui vous intéressent</label>
@@ -148,20 +201,33 @@ export default function CTA() {
                         <input
                           type="checkbox"
                           checked={services.includes(service.id)}
-                          onChange={() => toggleService(service.id)}
+                          onChange={() => {
+                            toggleService(service.id);
+                            setErrors(prev => ({ ...prev, services: '' }));
+                          }}
                           className="w-5 h-5 rounded-lg bg-white accent-sage-500 cursor-pointer"
                         />
                         <span className="text-white group-hover:text-white/80 transition-colors">{service.label}</span>
                       </label>
                     ))}
                   </div>
+                  {errors.services && (
+                    <div className="flex items-center gap-2 mt-2 text-red-200 text-sm">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.services}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <select
                     value={timeline}
-                    onChange={(e) => setTimeline(e.target.value)}
-                    required
-                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+                    onChange={(e) => {
+                      setTimeline(e.target.value);
+                      setErrors(prev => ({ ...prev, timeline: '' }));
+                    }}
+                    className={`w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 ${
+                      errors.timeline ? 'ring-red-400 focus:ring-red-400' : 'focus:ring-white/50'
+                    }`}
                   >
                     <option value="">Sélectionnez votre timeline souhaitée</option>
                     <option value="urgent">Urgent (dans les 2 semaines)</option>
@@ -169,32 +235,71 @@ export default function CTA() {
                     <option value="flexible">Flexible (3+ mois)</option>
                     <option value="exploration">En exploration (pas de deadline)</option>
                   </select>
+                  {errors.timeline && (
+                    <div className="flex items-center gap-2 mt-2 text-red-200 text-sm">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.timeline}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <input
                     type="tel"
                     placeholder="Votre numéro de téléphone"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                      setErrors(prev => ({ ...prev, phone: '' }));
+                    }}
+                    className={`w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 ${
+                      errors.phone ? 'ring-red-400 focus:ring-red-400' : 'focus:ring-white/50'
+                    }`}
                   />
+                  {errors.phone && (
+                    <div className="flex items-center gap-2 mt-2 text-red-200 text-sm">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.phone}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <input
                     type="url"
                     placeholder="Lien de votre site internet (optionnel)"
                     value={website}
-                    onChange={(e) => setWebsite(e.target.value)}
-                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+                    onChange={(e) => {
+                      setWebsite(e.target.value);
+                      setErrors(prev => ({ ...prev, website: '' }));
+                    }}
+                    className={`w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 ${
+                      errors.website ? 'ring-red-400 focus:ring-red-400' : 'focus:ring-white/50'
+                    }`}
                   />
+                  {errors.website && (
+                    <div className="flex items-center gap-2 mt-2 text-red-200 text-sm">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.website}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <textarea
                     placeholder="Décrivez votre projet"
                     value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    className="w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-white/50 resize-none h-32"
+                    onChange={(e) => {
+                      setDescription(e.target.value);
+                      setErrors(prev => ({ ...prev, description: '' }));
+                    }}
+                    className={`w-full px-5 py-4 rounded-2xl bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 resize-none h-32 ${
+                      errors.description ? 'ring-red-400 focus:ring-red-400' : 'focus:ring-white/50'
+                    }`}
                   />
+                  {errors.description && (
+                    <div className="flex items-center gap-2 mt-2 text-red-200 text-sm">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.description}
+                    </div>
+                  )}
                 </div>
               </div>
               <button
