@@ -91,10 +91,12 @@ export default function RendezVous() {
         setSubmitted(true);
         setTimeout(() => {
           if (successMessageRef.current) {
-            successMessageRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            window.scrollBy({ top: -80, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => {
+              successMessageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
           }
-        }, 300);
+        }, 100);
         setTimeout(() => {
           if (window.Calendly && typeof window.Calendly.showPopupWidget === 'function') {
             window.Calendly.showPopupWidget('https://calendly.com/contact-rochefort-digital/30min');
@@ -153,6 +155,15 @@ export default function RendezVous() {
         <section id="contact-form" className="section-padding bg-white">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto">
+              {submitted && (
+                <div ref={successMessageRef} className="mb-8 p-6 bg-green-50 border-2 border-green-400 rounded-lg flex items-center gap-4 shadow-lg animate-pulse">
+                  <Check className="w-8 h-8 text-green-600 flex-shrink-0" />
+                  <div>
+                    <p className="text-green-900 font-bold text-lg">Message envoyé avec succès!</p>
+                    <p className="text-green-800 text-sm">Je vous recontacterai très rapidement.</p>
+                  </div>
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
@@ -258,16 +269,6 @@ export default function RendezVous() {
                     className="w-full px-4 py-3 bg-cream-50 border border-sage-200 rounded-lg text-charcoal-800 placeholder-charcoal-400 focus:outline-none focus:border-sage-400 focus:ring-2 focus:ring-sage-100 transition-colors resize-none"
                   />
                 </div>
-
-                {submitted && (
-                  <div ref={successMessageRef} className="p-6 bg-green-50 border-2 border-green-400 rounded-lg flex items-center gap-4 shadow-lg animate-pulse">
-                    <Check className="w-8 h-8 text-green-600 flex-shrink-0" />
-                    <div>
-                      <p className="text-green-900 font-bold text-lg">Message envoyé avec succès!</p>
-                      <p className="text-green-800 text-sm">Je vous recontacterai très rapidement.</p>
-                    </div>
-                  </div>
-                )}
 
                 <button
                   type="submit"
