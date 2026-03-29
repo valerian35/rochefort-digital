@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingEmailButton from './components/FloatingEmailButton';
@@ -14,12 +15,23 @@ import FAQ from './pages/FAQ';
 import RendezVous from './pages/RendezVous';
 import Contact from './pages/Contact';
 
-function App() {
+function AppContent() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const redirect = params.get('redirect');
+
+    if (redirect) {
+      navigate('/' + redirect, { replace: true });
+    }
+  }, [navigate, location]);
+
   return (
-    <Router>
-      <div className="min-h-screen">
-        <FloatingEmailButton />
-        <Routes>
+    <div className="min-h-screen">
+      <FloatingEmailButton />
+      <Routes>
           <Route
             path="/"
             element={
@@ -43,7 +55,14 @@ function App() {
           <Route path="/rendez-vous" element={<RendezVous />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
