@@ -229,7 +229,7 @@ export default function SEO() {
           </div>
         </section>
 
-        <section id="tarifs" className="section-padding bg-white">
+        <section id="tarifs" className="section-padding bg-white pt-24">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Tarifs SEO</p>
