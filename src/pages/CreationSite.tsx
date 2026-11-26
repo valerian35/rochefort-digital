@@ -296,7 +296,7 @@ export default function CreationSite() {
                 },
                 {
                   question: 'Proposez-vous la maintenance du site ?',
-                  answer: 'Oui, je propose des forfaits de maintenance mensuelle incluant les mises à jour de sécurité, sauvegardes, et modifications mineures. Les tarifs varient selon vos besoins.',
+                  answer: 'Oui, je propose des forfaits de maintenance mensuelle incluant les mises à jour de sécurité, sauvegardes, et modifications mineures. Ces forfaits sont établis sur devis, selon vos besoins.',
                 },
               ].map((faq) => (
                 <div
