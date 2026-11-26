@@ -49,17 +49,20 @@ export default function Ecommerce() {
 
   const pricing = [
     {
-      name: 'Starter',
-      price: 'Sur devis',
-      description: 'Pour démarrer votre activité en ligne',
-      features: ['Jusqu\'à 100 produits', 'Design personnalisé', 'Paiement sécurisé', 'Gestion des commandes', 'Optimisation SEO de base', 'B2B/B2C', 'Performance optimisée', 'Support prioritaire 3 mois'],
-    },
-    {
-      name: 'Business',
-      price: 'Sur devis',
-      description: 'Pour une boutique complète',
-      features: ['Inclut l\'ensemble de l\'offre Starter, avec des ajustements personnalisés selon vos besoin', 'Produits illimités', 'Design premium', 'Gestion des promotions', 'SEO avancé', 'Intégrations marketing', 'Support prioritaire 6 mois'],
-      popular: true,
+      name: 'Sur devis',
+      description: 'Une boutique en ligne adaptée à votre catalogue, de votre lancement à une boutique complète',
+      features: [
+        'Design personnalisé et premium',
+        'Produits illimités',
+        'Paiement sécurisé',
+        'Gestion des commandes',
+        'Gestion des promotions',
+        'B2B/B2C',
+        'Performance optimisée',
+        'SEO avancé',
+        'Intégrations marketing',
+        'Support prioritaire jusqu\'à 6 mois',
+      ],
     },
   ];
 
@@ -93,7 +96,7 @@ export default function Ecommerce() {
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <a href="#tarifs" className="btn-secondary">
-                  Voir les offres
+                  Demander un devis
                 </a>
               </div>
             </div>
@@ -171,49 +174,37 @@ export default function Ecommerce() {
         <section id="tarifs" className="section-padding bg-sage-50 pt-24">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Tarifs e-commerce</p>
+              <p className="text-sage-600 font-medium tracking-widest uppercase text-sm mb-4">Sur devis</p>
               <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-charcoal-800 mb-6">
-                Des solutions pour tous les budgets
+                Une boutique construite autour de votre activité
               </h2>
+              <p className="text-charcoal-600 text-lg">
+                Chaque boutique est différente. Après un premier échange sur votre catalogue et vos objectifs,
+                je vous propose un devis personnalisé.
+              </p>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 max-w-6xl mx-auto">
               {pricing.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative p-6 sm:p-8 rounded-2xl transition-all duration-300 w-full max-w-xs ${
-                    plan.popular ? 'bg-sage-600 text-white shadow-xl' : 'bg-white shadow-md hover:shadow-lg'
-                  }`}
+                  className="relative p-8 sm:p-10 rounded-2xl transition-all duration-300 w-full max-w-2xl bg-sage-600 text-white shadow-xl"
                 >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-charcoal-900 text-white text-sm rounded-full">
-                      Recommandé
-                    </div>
-                  )}
-                  <h3 className={`font-serif text-2xl mb-2 ${plan.popular ? 'text-white' : 'text-charcoal-800'}`}>
-                    {plan.name}
-                  </h3>
-                  <p className={`text-sm mb-4 ${plan.popular ? 'text-sage-100' : 'text-charcoal-500'}`}>
-                    {plan.description}
-                  </p>
-                  <div className={`text-3xl font-serif mb-6 ${plan.popular ? 'text-white' : 'text-charcoal-800'}`}>
-                    {plan.price}
-                  </div>
-                  <ul className="space-y-3 mb-8">
+                  <h3 className="font-serif text-3xl mb-2 text-white">{plan.name}</h3>
+                  <p className="text-sm mb-8 text-sage-100">{plan.description}</p>
+                  <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-8">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-sage-200' : 'text-sage-500'}`} />
-                        <span className={plan.popular ? 'text-sage-50' : 'text-charcoal-600'}>{feature}</span>
+                        <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-sage-200" />
+                        <span className="text-sage-50">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <button
                     onClick={scrollToRendezVous}
-                    className={`block text-center w-full py-3 rounded-full font-medium transition-all cursor-pointer ${
-                      plan.popular ? 'bg-white text-sage-600 hover:bg-cream-100' : 'bg-sage-500 text-white hover:bg-sage-600'
-                    }`}
+                    className="block text-center w-full py-3 rounded-full font-medium transition-all cursor-pointer bg-white text-sage-600 hover:bg-cream-100"
                   >
-                    Prendre un rendez-vous
+                    Demander un devis
                   </button>
                 </div>
               ))}
