@@ -1,13 +1,6 @@
 import { ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const scrollToRendezVous = () => {
-  const element = document.getElementById('rendez-vous-form');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
-
 const testimonials = [
   {
     name: 'Maxime V.',
@@ -43,13 +36,13 @@ export default function Stories() {
               Mes clients ont retrouvé une vraie visibilité en ligne. Des sites modernes, une stratégie SEO efficace, et surtout : du trafic qualifié qui se transforme en commandes. C'est ma seule métrique : vos résultats.
             </p>
 
-            <button
-              onClick={scrollToRendezVous}
+            <Link
+              to="/contact"
               className="btn-primary cursor-pointer"
             >
               Prendre un rendez-vous
               <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
-            </button>
+            </Link>
           </div>
 
           <div className="relative">

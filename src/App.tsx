@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingEmailButton from './components/FloatingEmailButton';
@@ -12,7 +12,6 @@ import Blog from './pages/Blog';
 import CategoryPage from './pages/CategoryPage';
 import ArticlePage from './pages/ArticlePage';
 import FAQ from './pages/FAQ';
-import RendezVous from './pages/RendezVous';
 import Contact from './pages/Contact';
 
 function AppContent() {
@@ -53,7 +52,7 @@ function AppContent() {
           <Route path="/blog/:slug" element={<CategoryPage />} />
           <Route path="/blog/:categorySlug/:articleSlug" element={<ArticlePage />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/rendez-vous" element={<RendezVous />} />
+          <Route path="/rendez-vous" element={<Navigate to="/contact" replace />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
     </div>

@@ -5,13 +5,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CTA from '../components/CTA';
 
-const scrollToRendezVous = () => {
-  const element = document.getElementById('rendez-vous-form');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
-
 export default function CreationSite() {
   const [searchParams] = useSearchParams();
 
@@ -144,13 +137,13 @@ export default function CreationSite() {
                 Un investissement stratégique pour développer votre activité en ligne.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button onClick={scrollToRendezVous} className="btn-primary cursor-pointer">
+                <Link to="/contact" className="btn-primary cursor-pointer">
                   Prendre un rendez-vous
                   <ArrowRight className="w-4 h-4" />
-                </button>
-                <a href="#tarifs" className="btn-secondary">
+                </Link>
+                <Link to="/contact" className="btn-secondary">
                   Demander un devis
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -261,12 +254,12 @@ export default function CreationSite() {
                       </li>
                     ))}
                   </ul>
-                  <button
-                    onClick={scrollToRendezVous}
+                  <Link
+                    to="/contact"
                     className="block text-center w-full py-3 rounded-full font-medium transition-all cursor-pointer bg-white text-sage-600 hover:bg-cream-100"
                   >
                     Demander un devis
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>

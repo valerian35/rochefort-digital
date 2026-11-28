@@ -1,5 +1,5 @@
-import { CheckCircle } from 'lucide-react';
-import ContactForm from './ContactForm';
+import { ArrowRight, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function CTA() {
   return (
@@ -36,7 +36,14 @@ export default function CTA() {
             </ul>
           </div>
 
-          <ContactForm />
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-charcoal-900 text-white font-semibold rounded-full transition-all duration-300 hover:bg-charcoal-800 hover:shadow-xl"
+          >
+            Prendre rendez-vous
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+          <p className="text-white/80 text-sm mt-4">Sans engagement. Réponse sous 24h.</p>
         </div>
       </div>
     </section>

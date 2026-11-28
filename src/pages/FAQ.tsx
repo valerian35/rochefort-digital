@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -170,13 +171,13 @@ export default function FAQ() {
             <p className="text-sage-100 mb-8 text-lg">
               Contactez-moi directement et je serai ravi de discuter de vos besoins spécifiques.
             </p>
-            <a
-              href="/#contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-sage-600 font-medium rounded-full hover:bg-sage-50 transition-all shadow-lg hover:shadow-xl"
             >
               Prendre rendez-vous
               <span className="w-1.5 h-1.5 rounded-full bg-sage-600" />
-            </a>
+            </Link>
           </div>
         </div>
       </main>

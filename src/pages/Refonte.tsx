@@ -76,10 +76,10 @@ export default function Refonte() {
                 moderne et efficace, tout en préservant votre référencement existant.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#rendez-vous-form" className="btn-primary">
+                <Link to="/contact" className="btn-primary">
                   Analyser mon site gratuitement
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
                 <a href="#processus" className="btn-secondary">
                   Voir le processus
                 </a>

@@ -166,7 +166,7 @@ export default function Blog() {
               Discutons de votre projet web et voyons comment je peux vous accompagner.
             </p>
             <Link
-              to="/#contact"
+              to="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-sage-600 font-medium rounded-full hover:bg-cream-100 transition-all"
             >
               Me contacter

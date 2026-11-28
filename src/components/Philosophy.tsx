@@ -1,11 +1,5 @@
 import { Sparkles, ArrowRight } from 'lucide-react';
-
-const scrollToRendezVous = () => {
-  const element = document.getElementById('rendez-vous-form');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
+import { Link } from 'react-router-dom';
 
 export default function Philosophy() {
   return (
@@ -33,13 +27,13 @@ export default function Philosophy() {
             Je suis freelance développeur web à Rennes. Vous avez un unique interlocuteur — pas de meeting sans fin, pas de communication filtrée. Je crée des sites performants et optimisés SEO pour les PME et commerces. Disponible, réactif, et engagé pour vos résultats.
           </p>
 
-          <button
-            onClick={scrollToRendezVous}
+          <Link
+            to="/contact"
             className="btn-primary cursor-pointer"
           >
             Prendre un rendez-vous
             <span className="w-1.5 h-1.5 rounded-full bg-white/80" />
-          </button>
+          </Link>
         </div>
 
         <div className="mt-16 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

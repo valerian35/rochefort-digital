@@ -1,9 +1,18 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 
 export default function Contact() {
+  const { key } = useLocation();
+
+  // Chaque lien vers cette page l'affiche depuis le haut
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [key]);
+
   return (
     <div className="min-h-screen">
       <Header />
